@@ -19,6 +19,16 @@ main {
   width: 100%;
 }
 
+.fr {
+  display: flex;
+  flex-direction: row;
+}
+
+.fc {
+  display: flex;
+  flex-direction: column;
+}
+
 .frc {
   display: flex;
   flex-direction: row;
