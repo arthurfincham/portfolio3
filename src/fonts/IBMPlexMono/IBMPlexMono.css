@@ -12,3 +12,8 @@
   font-family: 'IBMPlexMono-SemiBold';
   src: local('IBMPlexMono-SemiBold'), url('./IBMPlexMono-SemiBold.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'IBMPlexMono-Bold';
+  src: local('IBMPlexMono-Bold'), url('./IBMPlexMono-Bold.ttf') format('truetype');
+}

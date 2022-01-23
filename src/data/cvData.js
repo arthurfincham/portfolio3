@@ -1,7 +1,7 @@
 export const kcl = {
   title: "King's College London",
   subTitle: 'BA Philosophy',
-  dates: '2018 - 2021',
+  dates: '2018-2021',
   points: [
     'Thesis on The Consequences of Determinism for Moral Responsibility.',
     'Modules in Elementary Logic & Philosophical Logic.',
@@ -13,7 +13,7 @@ export const kcl = {
 export const rga = {
   title: 'Roger Gracie Academy',
   subTitle: 'Front Desk',
-  dates: '2019 - 2021',
+  dates: '2019-2021',
   points: [
     'Worked with a diverse team from all over the world at the world renowned Jiu Jitsu school in London.',
     'Helped the team transition to new internal software (Mindbody) and modify old business practices.',
