@@ -1,5 +1,6 @@
 import { makers, kcl, rga } from '../data/cvData';
-import { DownloadCV } from './CVpdf';
+import PDF from '../data/ArthurFincham_CV_2022.pdf';
+import PDFIcon from '../svgs/PDFIcon';
 export default function CV() {
   const Item = ({ props }) => {
     return (
@@ -27,9 +28,11 @@ export default function CV() {
   };
 
   return (
-    <div>
-      <DownloadCV />
-      <div className="w-11/12 h-auto p-4 bg-white shadow-lg fc">
+    <div className="fcc">
+      <a href={PDF} target="_blank" className="mb-4 bg-white rounded-lg shadow-lg hover:bg-gray-100">
+        <PDFIcon className="" />
+      </a>
+      <div className="w-11/12 h-auto p-4 mb-12 bg-white shadow-xl fc">
         <div className="fcc">
           <h1 className="text-3xl">Arthur Fincham</h1>
           <span className="font-mono2">arthurfincham@me.com</span>
