@@ -19,13 +19,14 @@ export default function Navbar() {
   };
 
   const navSpring = useSpring({
-    config,
-    transform: isClosed ? 'translateX(-100%)' : 'translateX(0)',
+    right: isClosed ? window.innerWidth : 0,
   });
+
+  const rotation = isClosed ? 0 : -45;
 
   const arrowRotation = useSpring({
     config,
-    transform: isClosed ? 'rotate(0deg)' : 'rotate(-45deg))',
+    transform: isClosed ? `rotate(${rotation}deg)` : `rotate(${rotation}deg)`,
   });
 
   return (
@@ -38,10 +39,10 @@ export default function Navbar() {
       </div>
       <animated.div
         style={navSpring}
-        className="bg-amber-100 mobileNavBar absolute top-[50px] w-full z-20  h-[50px] flex sm:hidden fr justify-start p-4 "
+        className="bg-amber-100 mobileNavBar absolute top-[50px] w-full z-20  h-[50px] flex sm:hidden fc justify-start p-4 "
       >
-        <div ref={ref} className="bg-amber-100 h-[950px] z-20 w-full">
-          <NavLinks className="items-start space-y-6 fc "></NavLinks>
+        <div ref={ref} className="bg-amber-100 h-[950px] z-20 w-full ">
+          <NavLinks handleClick={handleClick} className="items-start space-y-6 fc " />
         </div>
       </animated.div>
     </nav>
