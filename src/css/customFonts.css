@@ -28,6 +28,21 @@
   src: local('Aktiv-Thin'), url('../fonts/Aktiv/AktivGrotesk-Thin.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'IBMPlexMono-Regular';
+  src: local('IBMPlexMono-Regular'), url('../fonts/IBMPlexMono/IBMPlexMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'IBMPlexMono-Regular';
+  src: local('IBMPlexMono-Regular'), url('../fonts/IBMPlexMono/IBMPlexMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'IBMPlexMono-SemiBold';
+  src: local('IBMPlexMono-SemiBold'), url('../fonts/IBMPlexMono/IBMPlexMono-SemiBold.ttf') format('truetype');
+}
+
 h1 {
   font-family: 'Aktiv-Black';
 }
