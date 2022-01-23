@@ -28,15 +28,19 @@ export default function CV() {
   };
 
   return (
-    <div className="fcc">
-      <a href={PDF} target="_blank" className="mb-4 bg-white rounded-lg shadow-lg hover:bg-gray-100">
-        <PDFIcon className="" />
-      </a>
-      <div className="w-11/12 h-auto p-4 mb-12 bg-white shadow-xl fc">
-        <div className="fcc">
+    <div className="w-full fcc">
+      <div className="w-11/12 h-auto p-12 mb-12 bg-white shadow-xl fc max-w-[800px]">
+        <div className="relative fc sm:items-center">
           <h1 className="text-3xl">Arthur Fincham</h1>
           <span className="font-mono2">arthurfincham@me.com</span>
           <span className="font-mono2">London, UK</span>
+          <a
+            href={PDF}
+            target="_blank"
+            className="w-[60px] h-[60px] absolute right-0 bg-gray-100 rounded-lg border-[.12em] border-black hover:bg-gray-200 fcc"
+          >
+            <PDFIcon className="z-10 w-full h-full " />
+          </a>
         </div>
         <Header text="ABOUT ME" />
         <p className="my-2 text-sm leading-6 font-a4">
