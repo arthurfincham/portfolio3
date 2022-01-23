@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Aktiv-Black';
+  src: local('Aktiv-Black'), url('./AktivGrotesk-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aktiv-Bold';
+  src: local('Aktiv-Bold'), url('./AktivGrotesk-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aktiv-Medium';
+  src: local('Aktiv-Medium'), url('./AktivGrotesk-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aktiv-Regular';
+  src: local('Aktiv-Regular'), url('./AktivGrotesk-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aktiv-Light';
+  src: local('Aktiv-Light'), url('./AktivGrotesk-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aktiv-Thin';
+  src: local('Aktiv-Thin'), url('./AktivGrotesk-Thin.ttf') format('truetype');
+}
+
+h1 {
+  font-family: 'Aktiv-Black';
+}
+
+h2 {
+  font-family: 'Aktiv-Bold';
+}
+
+h3 {
+  font-family: 'Aktiv-Medium';
+}
+
+a,
+button {
+  font-family: 'Aktiv-Regular';
+}
+
+p,
+li {
+  font-family: 'Aktiv-Light';
+}
+
+h6 {
+  font-family: 'Aktiv-Thin';
+}

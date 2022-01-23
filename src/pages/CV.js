@@ -10,8 +10,12 @@ export default function CV() {
           <p>{props.dates}</p>
         </div>
         <ul className="text-xs">
-          {props.points.map((point) => {
-            return <li className="pl-2 my-2 ml-[-.6em] border-l-2 border-black">{point}</li>;
+          {props.points.map((point, index) => {
+            return (
+              <li key={index} className="pl-2 my-2 ml-[-.6em] border-l-2 border-black">
+                {point}
+              </li>
+            );
           })}
         </ul>
       </div>
@@ -20,6 +24,7 @@ export default function CV() {
 
   return (
     <div className="mt-[150px] sm:mt-0 w-11/12 h-auto px-4 bg-white shadow-lg fc">
+      <span className="text-lg font-aktiv1">EDUCATION</span>
       <CVItem props={makers} />
       <CVItem props={kcl} />
       <CVItem props={rga} />

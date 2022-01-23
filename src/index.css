@@ -1,9 +1,10 @@
-@import './css/customClasses.css';
-@import './css/customFonts.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import './css/customClasses.css';
+@import './fonts/AktivGrotesk/AktivGrotesk.css';
+@import './fonts/IBMPlexMono/IBMPlexMono.css';
 
 * {
   -webkit-font-smoothing: antialiased;

@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'IBMPlexMono-Regular';
+  src: local('IBMPlexMono-Regular'), url('./IBMPlexMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'IBMPlexMono-Medium';
+  src: local('IBMPlexMono-Medium'), url('./IBMPlexMono-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'IBMPlexMono-SemiBold';
+  src: local('IBMPlexMono-SemiBold'), url('./IBMPlexMono-SemiBold.ttf') format('truetype');
+}
