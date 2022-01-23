@@ -21,7 +21,7 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="w-full bg-slate-800 relative h-[60px] fr justify-end shadow-xl text-white">
+    <nav className="w-full bg-white relative h-[60px] fr justify-end shadow-xl">
       <NavLinks className="items-center hidden w-auto mx-4 space-x-4 sm:flex" />
       <button onClick={() => setIsClosed(!isClosed)} className="block mx-4 sm:hidden">
         BUTTON

@@ -10,8 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Pages.About />} />
           <Route path="/projects" element={<Pages.Projects />} />
-          <Route path="/education" element={<Pages.Education />} />
-          <Route path="/experience" element={<Pages.Experience />} />
+          <Route path="/CV" element={<Pages.CV />} />
           <Route path="/contact" element={<Pages.Contact />} />
         </Routes>
       </main>

@@ -26,3 +26,35 @@
   justify-content: center;
   align-items: center;
 }
+
+.rotate-r1 {
+  transform: rotate(10deg);
+}
+
+.rotate-r2 {
+  transform: rotate(20deg);
+}
+
+.rotate-r3 {
+  transform: rotate(30deg);
+}
+
+.rotate-l1 {
+  transform: rotate(-10deg);
+}
+
+.rotate-l2 {
+  transform: rotate(-20deg);
+}
+
+.rotate-l3 {
+  transform: rotate(-30deg);
+}
+
+.childOverParent {
+  top: -0.5em;
+  right: 0;
+  bottom: 0.5em;
+  left: 0;
+  margin: auto;
+}

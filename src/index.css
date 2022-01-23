@@ -15,14 +15,14 @@ body,
 #root {
   width: 100%;
   height: 100%;
-  @apply bg-slate-800;
+  @apply bg-amber-100;
 }
 
 main {
   height: 100%;
   width: 100%;
   margin-top: 125px;
-  @apply bg-slate-800;
+  @apply bg-amber-100;
   display: flex;
   flex-direction: column;
   justify-content: center;

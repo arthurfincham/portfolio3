@@ -27,3 +27,30 @@
   font-family: 'Aktiv-Thin';
   src: local('Aktiv-Thin'), url('../fonts/Aktiv/AktivGrotesk-Thin.ttf') format('truetype');
 }
+
+h1 {
+  font-family: 'Aktiv-Black';
+}
+
+h2 {
+  font-family: 'Aktiv-Bold';
+}
+
+h3 {
+  font-family: 'Aktiv-Medium';
+}
+
+span,
+a,
+button {
+  font-family: 'Aktiv-Regular';
+}
+
+p,
+li {
+  font-family: 'Aktiv-Light';
+}
+
+h6 {
+  font-family: 'Aktiv-Thin';
+}

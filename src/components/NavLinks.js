@@ -5,9 +5,8 @@ export default function NavLinks({ className }) {
     <div className={className}>
       <NavLink to="/">About</NavLink>
       <NavLink to="/projects">Projects</NavLink>
-      <NavLink to="/Education">Education</NavLink>
-      <NavLink to="/Experience">Experience</NavLink>
-      <NavLink to="/Contact">Contact</NavLink>
+      <NavLink to="/CV">CV</NavLink>
+      <NavLink to="/contact">Contact</NavLink>
     </div>
   );
 }
