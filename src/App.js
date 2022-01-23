@@ -6,7 +6,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <main className="fcc">
+      <main>
         <Routes>
           <Route path="/" element={<Pages.About />} />
           <Route path="/projects" element={<Pages.Projects />} />
