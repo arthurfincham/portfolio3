@@ -1,0 +1,28 @@
+.fr {
+  display: flex;
+  flex-direction: row;
+}
+
+.frr {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.fc {
+  display: flex;
+  flex-direction: column;
+}
+
+.frc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.fcc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
