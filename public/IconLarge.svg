@@ -1,0 +1,24 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff4c7;
+      }
+
+      .cls-2 {
+        font-size: 105px;
+        fill: #4239e5;
+        font-family: AktivGrotesk-Black, Aktiv Grotesk;
+        font-weight: 800;
+      }
+
+      .cls-3 {
+        letter-spacing: 0.03em;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="cls-1" width="512" height="512"/>
+    <text class="cls-2" transform="translate(33.5 216.47)">a<tspan class="cls-3" x="62.9" y="0">r</tspan><tspan x="114.55" y="0">thur</tspan><tspan x="0" y="126">fincham</tspan></text>
+  </g>
+</svg>
