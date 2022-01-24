@@ -35,7 +35,7 @@ export default function Navbar() {
         <NavLinks className="items-center hidden w-auto mx-4 mt-2 space-x-6 sm:flex " />
         <div onClick={() => handleClick()} className="z-10 mr-4 hover:cursor-pointer">
           <animated.div style={arrowRotation} className="w-auto h-full sm:hidden">
-            <PlusIcon className="w-auto h-full sm:hidden stroke-black" />
+            <PlusIcon className="w-auto h-full sm:hidden" />
           </animated.div>
         </div>
       </div>
