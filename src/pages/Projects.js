@@ -11,7 +11,7 @@ export default function Projects() {
           <div key={index} className="w-5/6 m-6 lg:w-5/12 fcc">
             <div className="space-x-2 fr">
               <div className="space-y-2 fc">
-                <ProjectItem className="relative w-full " project={project} />
+                <ProjectItem className="relative w-full cursor-pointer " project={project} />
               </div>
             </div>
           </div>

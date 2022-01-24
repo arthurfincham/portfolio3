@@ -3,7 +3,6 @@ import { useSpring, animated } from 'react-spring';
 import useMeasure from 'react-use-measure';
 import { useState } from 'react';
 import PinIcon from '../svgs/PinIcon';
-import PlusIcon from '../svgs/PlusIcon';
 
 export default function ProjectItem({ project, className }) {
   const [isClosed, setIsClosed] = useState(true);
@@ -42,12 +41,14 @@ export default function ProjectItem({ project, className }) {
 
   const infoStyle = useSpring({
     height: infoMaster() ? 0 : bounds.height,
+    borderTop: infoMaster() ? 'none' : 'solid',
+    borderTopWidth: infoMaster() ? '0' : '0.1em',
   });
 
   const pinStyle = {
-    fill: isPinned ? 'black' : 'none',
-    stroke: isPinned ? '#FFF4C7' : 'black',
-    strokeWidth: isPinned ? '5px' : '25px',
+    fill: 'none',
+    stroke: 'black',
+    strokeWidth: '25px',
   };
 
   const Link = ({ url }) => {
@@ -62,26 +63,20 @@ export default function ProjectItem({ project, className }) {
 
   const Tab = ({ children }) => {
     return (
-      <div
-        onMouseEnter={handleEnter}
-        onMouseLeave={handleExit}
-        onClick={handleClick}
-        className="flex items-center h-auto p-1 px-2 space-x-1 border-2 border-b-0 rounded-t-lg shadow-lg cursor-pointer bg-amber-100 hover:bg-amber-300/40"
-      >
+      <div className="flex items-center h-auto p-1 px-2 space-x-1 bg-white border-[.1em] border-black  border-b-0 rounded-t-lg shadow-md ">
         {children}
       </div>
     );
   };
 
   const LinkTab = ({ children }) => {
-    return <div className="h-auto p-1 px-2 border-2 border-b-0 rounded-t-lg shadow-lg bg-amber-100 hover:bg-amber-300/40">{children}</div>;
+    return <div className="h-auto p-1 px-2 bg-white border-[.1em] border-black  border-b-0 rounded-t-lg shadow-lg hover:bg-gray-100">{children}</div>;
   };
 
   return (
-    <div className="border-2 rounded-lg fcc">
-      <div className="items-end w-full px-4 pt-2 space-x-2 border-b-2 rounded-t-lg shadow-lg bg-amber-50 fr">
+    <div className="rounded-lg border-[.1em] border-black fcc overflow-hidden">
+      <div className="items-end w-full px-4 pt-2 space-x-2 bg-amber-50 border-black  border-b-[.1em] rounded-t-lg  fr  overflow-hidden relative">
         <Tab>
-          {isClosed ? <PlusIcon className="w-[20px] h-[20px] scale-[1.3]" /> : <PinIcon styles={pinStyle} className="w-[20px] h-[20px]" />}
           <span className="text-xl font-mono1">{project.title}</span>
         </Tab>
         <LinkTab>
@@ -90,10 +85,11 @@ export default function ProjectItem({ project, className }) {
           </a>
         </LinkTab>
         {project.liveLink ? <Link url={project.liveLink} /> : ''}
+        {isPinned ? <PinIcon styles={pinStyle} className="w-[25px] h-[25px] absolute right-3 top-3" /> : ''}
       </div>
-      <div className={className} ref={imageRef}>
+      <div className={className} ref={imageRef} onMouseEnter={handleEnter} onMouseLeave={handleExit} onClick={handleClick}>
         <img src={project.imagePath} className="w-full rounded-b-lg shadow-lg projectImage" />
-        <animated.div style={infoStyle} className="absolute bottom-0 w-full overflow-hidden rounded-lg shadow-lg bg-amber-100">
+        <animated.div style={infoStyle} className="absolute bottom-0 w-full overflow-hidden shadow-lg bg-amber-50 border-t-[.1em] border-black">
           <div ref={ref} className="w-full px-2 pb-4">
             <div className="w-full p-3 py-6 space-y-2 text-sm font-a3 fc">
               {project.description.map((point) => {
