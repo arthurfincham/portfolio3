@@ -4,11 +4,9 @@ export const gustApp = {
   repoURL: 'https://github.com/arthurfincham/gust',
   subTitle: 'PERSONAL PROJECT',
   description: [
-    'Components for React and Tailwind CSS.',
-    'Simple, modular components.',
+    'Simple, modular components for React and Tailwind CSS.',
+    'Copy and paste JSX from each component, full documentation.',
     'No install, no large dependencies.',
-    'Copy and paste JSX from each component.',
-    'Full documentation.',
   ],
   stack: ['React', 'Jest', 'Tailwind', 'Vercel'],
   images: [

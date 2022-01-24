@@ -96,3 +96,21 @@ main {
 .mobileNavBar > * > * .active {
   position: relative;
 }
+
+.stackRow:nth-child(2n) {
+  flex-basis: 100%;
+}
+
+.projectImage {
+  z-index: 5;
+}
+
+.projectInfoBox {
+  z-index: 12;
+}
+
+.rotateElement {
+  writing-mode: vertical-rl;
+  text-align: center;
+  transform: rotate(180deg);
+}

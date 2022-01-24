@@ -1,14 +1,6 @@
-export default function AwsLogo() {
+export default function AwsLogo({ className }) {
   return (
-    <svg
-      height="100"
-      width="100"
-      className="w-1/4 fill-black dark:fill-white h-1/4 max-w-[40px]"
-      xmlns="http://www.w3.org/2000/svg"
-      x="0px"
-      y="0px"
-      viewBox="0 0 304 182"
-    >
+    <svg height="100" width="100" className={className} xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 304 182">
       <g>
         <path
           d="M86.4,66.4c0,3.7,0.4,6.7,1.1,8.9c0.8,2.2,1.8,4.6,3.2,7.2c0.5,0.8,0.7,1.6,0.7,2.3c0,1-0.6,2-1.9,3l-6.3,4.2

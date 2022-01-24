@@ -1,4 +1,4 @@
-export default function SinatraLogo() {
+export default function SinatraLogo({ className }) {
   return (
     <svg
       height="100"
