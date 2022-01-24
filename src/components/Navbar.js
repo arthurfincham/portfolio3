@@ -39,11 +39,8 @@ export default function Navbar() {
           </animated.div>
         </div>
       </div>
-      <animated.div
-        style={navSpring}
-        className="bg-amber-100 mobileNavBar absolute top-[50px] w-full z-20  h-[50px] flex sm:hidden fc justify-start p-4 "
-      >
-        <div ref={ref} className="bg-amber-100 h-[950px] z-20 w-full ">
+      <animated.div style={navSpring} className="bg-amber-100 mobileNavBar absolute top-[50px] w-full   flex sm:hidden fc justify-start p-4 ">
+        <div ref={ref} className="bg-amber-100 h-[950px] navContentMob w-full ">
           <NavLinks handleClick={handleClick} className="items-start space-y-6 fc " />
         </div>
       </animated.div>
