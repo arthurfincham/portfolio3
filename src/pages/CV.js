@@ -36,7 +36,7 @@ export default function CV() {
           <span className="font-mono2">London, UK</span>
           <a
             href={PDF}
-            target="_blank"
+            target="blank"
             className="w-[60px] h-[60px] absolute right-0 bg-gray-100 rounded-lg border-[.12em] border-black hover:bg-gray-200 fcc"
           >
             <PDFIcon className="z-10 w-full h-full " />

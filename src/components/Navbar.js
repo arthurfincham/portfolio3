@@ -1,13 +1,11 @@
 import NavLinks from './NavLinks';
 import { useSpring, animated } from 'react-spring';
-import useMeasure from 'react-use-measure';
+
 import { useState } from 'react';
 import PlusIcon from '../svgs/PlusIcon';
 
 export default function Navbar() {
   const [isClosed, setIsClosed] = useState(true);
-
-  const [ref, bounds] = useMeasure();
 
   const config = {
     tension: 210,
@@ -40,7 +38,7 @@ export default function Navbar() {
         </div>
       </div>
       <animated.div style={navSpring} className="bg-amber-100 mobileNavBar absolute top-[50px] w-full   flex sm:hidden fc justify-start p-4 ">
-        <div ref={ref} className="bg-amber-100 h-[950px] navContentMob w-full ">
+        <div className="bg-amber-100 h-[950px] navContentMob w-full ">
           <NavLinks handleClick={handleClick} className="items-start space-y-6 fc " />
         </div>
       </animated.div>

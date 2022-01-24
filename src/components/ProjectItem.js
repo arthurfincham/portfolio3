@@ -12,8 +12,6 @@ export default function ProjectItem({ project, className }) {
 
   const [ref, bounds] = useMeasure();
 
-  const [imageRef, imageBounds] = useMeasure();
-
   const capitalize = (str) => {
     return str.toUpperCase();
   };
@@ -79,19 +77,23 @@ export default function ProjectItem({ project, className }) {
           <span className="text-xl font-a1">{project.title}</span>
         </div>
       </div>
-      <div className={className} ref={imageRef} onMouseEnter={handleEnter} onMouseLeave={handleExit} onClick={handleClick}>
+      <div className={className} onMouseEnter={handleEnter} onMouseLeave={handleExit} onClick={handleClick}>
         <ResponsiveImage image={project.imagePath} />
         <animated.div style={infoStyle} className="absolute bottom-0 w-full overflow-hidden shadow-lg bg-amber-100">
           <div ref={ref} className="w-full px-2 pb-4">
             <div className="w-full p-3 py-6 space-y-2 text-sm font-a3 fc">
-              {project.description.map((point) => {
-                return <span className="">{point}</span>;
+              {project.description.map((point, index) => {
+                return (
+                  <span key={index} className="">
+                    {point}
+                  </span>
+                );
               })}
             </div>
             <div className="fr">
-              {project.stack.map((tool) => {
+              {project.stack.map((tool, index) => {
                 return (
-                  <div className="items-center justify-center px-2 space-x-2 fr">
+                  <div key={index} className="items-center justify-center px-2 space-x-2 fr">
                     {iconSelector(tool, 'w-1/5 h-auto')}
                     <span className="text-sm font-mono3">{capitalize(tool)}</span>
                   </div>
