@@ -1,8 +1,8 @@
-import { gustApp, chitter, classNotes, acebook, newsforce, fontApp } from '../data/projectData';
+import { gustApp, chitter, classNotes, acebook, newsforce, fontApp, countries, licence } from '../data/projectData';
 import ProjectItem from '../components/ProjectItem';
 
 export default function Projects() {
-  const projects = [gustApp, chitter, classNotes, acebook, newsforce, fontApp];
+  const projects = [gustApp, chitter, classNotes, acebook, newsforce, fontApp, countries, licence];
 
   return (
     <div className="flex-wrap w-full bg-amber-100 fcc lg:flex-row">

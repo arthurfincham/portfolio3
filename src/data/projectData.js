@@ -1,6 +1,5 @@
 export const gustApp = {
   title: 'Gust',
-  icon: 'OnlyFonts',
   repoURL: 'https://github.com/arthurfincham/gust',
   subTitle: 'PERSONAL PROJECT',
   description: [
@@ -9,19 +8,12 @@ export const gustApp = {
     'No install, no large dependencies.',
   ],
   stack: ['React', 'Jest', 'Tailwind', 'Vercel'],
-  images: [
-    ['gustMob.webp', 'imageMob w-11/12'],
-    ['gustMain.webp', 'imageMain w-11/12'],
-    ['gustSub.webp', 'imageSub w-11/12'],
-  ],
-  imageLayout: 'threeImageContainer',
   liveLink: 'https://gust-six.vercel.app/',
-  imagePath: 'images/gustMain.webp',
+  imagePath: 'gust',
 };
 
 export const fontApp = {
   title: 'Font App',
-  icon: 'OnlyFonts',
   repoURL: 'https://github.com/arthurfincham/font-app',
   subTitle: 'Personal Project',
   description: [
@@ -32,18 +24,12 @@ export const fontApp = {
     'Click-to-copy CDN and CSS.',
   ],
   stack: ['React', 'Jest', 'MaterialUi', 'Vercel'],
-  images: [
-    ['fontsMain.webp', ' w-3/4'],
-    ['fontsSub.webp', ' w-3/4'],
-  ],
-  imageLayout: 'flex flex-col items-center mr-4 ',
   liveLink: 'https://font-app.vercel.app/',
-  imagePath: 'images/fontsSub.webp',
+  imagePath: 'fontApp',
 };
 
 export const newsforce = {
   title: 'Newsforce',
-  icon: 'NewsforceGraphic',
   repoURL: 'https://github.com/newsforce/newsforce-front-end-react',
   subTitle: 'Group Engineering Project',
   description: [
@@ -54,18 +40,11 @@ export const newsforce = {
     'Interactive map for filtering.',
   ],
   stack: ['Rails', 'React', 'Heroku'],
-  images: [
-    ['newsforceMobile.webp', 'imageMob w-11/12'],
-    ['newsforceDesktop.webp', 'imageMain w-11/12'],
-    ['newsforceMap.webp', 'imageSub w-11/12'],
-  ],
-  imageLayout: 'threeImageContainer',
-  imagePath: 'images/newsforceDesktop.webp',
+  imagePath: 'newsforce',
 };
 
 export const classNotes = {
   title: 'ClassNotes',
-  icon: 'classNotesGraphic',
   repoURL: 'https://github.com/arthurfincham/classnotesv2',
   subTitle: 'Personal Project',
   description: [
@@ -76,32 +55,19 @@ export const classNotes = {
     'Simple, lightweight interface.',
   ],
   stack: ['Rails', 'Bootstrap', 'Heroku', 'PSQL'],
-  images: [
-    ['classnotesMobile.webp', 'imageMob w-11/12'],
-    ['classnotesNotes.webp', 'imageMain w-11/12'],
-    ['classnotesAuth.webp', 'imageSub w-11/12'],
-  ],
-  imageLayout: 'threeImageContainer',
-  imagePath: 'images/classnotesNotes.webp',
+  imagePath: 'classnotes',
 };
 export const acebook = {
   title: 'acebook',
-  icon: 'acebookGraphic',
   repoURL: 'https://github.com/emanfolo/acebook-Jeamm-Team',
   subTitle: 'Group Engineering Project',
   description: ['Facebook clone.', 'RoR backend.', 'Built with a remote team.', 'Full authentication.', 'AWS S3 for image uploading.'],
   stack: ['Rails', 'AWS', 'Heroku', 'PSQL'],
-  images: [
-    ['acebookAuth.webp', 'w-3/4'],
-    ['acebookHome.webp', 'w-3/4'],
-  ],
-  imageLayout: 'flex flex-col w-full items-center lg:items-start',
-  imagePath: 'images/acebookAuth.webp',
+  imagePath: 'acebook',
 };
 
 export const chitter = {
   title: 'Chitter',
-  icon: 'chitterGraphic',
   repoURL: 'https://github.com/arthurfincham/chitter-challenge',
   subTitle: 'Weekend Challenge',
   description: [
@@ -112,11 +78,25 @@ export const chitter = {
     'Guardian API feeds the news column.',
   ],
   stack: ['Sinatra', 'Bootstrap', 'Heroku', 'PSQL'],
-  images: [
-    ['chitterIn.webp', 'w-3/4'],
-    ['chitterOut.webp', 'w-3/4'],
-  ],
-  imageLayout: 'flex flex-col items-center mr-4',
   liveLink: 'https://chitter-af.herokuapp.com/',
-  imagePath: 'images/chitterOut.webp',
+  imagePath: 'chitter',
+};
+
+export const countries = {
+  title: 'Countries Quiz',
+  repoURL: 'https://github.com/arthurfincham/countries-of-the-world',
+  subTitle: 'Personal Project',
+  description: ['Interactive countries quiz.', 'Pan and zoom SVG.', 'MaterialUI progress for each continent.'],
+  stack: ['React', 'MaterialUI', 'Jest', 'Vercel'],
+  liveLink: 'https://countries-of-the-world-gules.vercel.app/',
+  imagePath: 'countriesQuiz',
+};
+export const licence = {
+  title: 'Dev Licence',
+  repoURL: 'https://github.com/arthurfincham/github-frontend-api',
+  subTitle: 'Personal Project',
+  description: ['Light-hearted front end project.', 'Fetch API calls to GitHub', 'User gets a driving licence style card.'],
+  stack: ['Express', 'Animate.CSS', 'CSS3', 'Heroku'],
+  liveLink: 'https://git-card.herokuapp.com/',
+  imagePath: 'devLicence',
 };

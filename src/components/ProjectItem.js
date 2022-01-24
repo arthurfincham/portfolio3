@@ -3,6 +3,7 @@ import { useSpring, animated } from 'react-spring';
 import useMeasure from 'react-use-measure';
 import { useState } from 'react';
 import PinIcon from '../svgs/PinIcon';
+import ResponsiveImage from './ResponsiveImage';
 
 export default function ProjectItem({ project, className }) {
   const [isClosed, setIsClosed] = useState(true);
@@ -79,7 +80,7 @@ export default function ProjectItem({ project, className }) {
         </div>
       </div>
       <div className={className} ref={imageRef} onMouseEnter={handleEnter} onMouseLeave={handleExit} onClick={handleClick}>
-        <img src={project.imagePath} className="w-full rounded-b-lg shadow-lg projectImage" />
+        <ResponsiveImage image={project.imagePath} />
         <animated.div style={infoStyle} className="absolute bottom-0 w-full overflow-hidden shadow-lg bg-amber-100">
           <div ref={ref} className="w-full px-2 pb-4">
             <div className="w-full p-3 py-6 space-y-2 text-sm font-a3 fc">
