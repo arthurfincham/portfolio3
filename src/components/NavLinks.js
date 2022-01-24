@@ -1,6 +1,11 @@
 import { NavLink } from 'react-router-dom';
 
 export default function NavLinks({ className, handleClick }) {
+  const handleHover = (e) => {
+    const el = e.target;
+    el.classList.add('active');
+  };
+
   return (
     <div className={className} onClick={handleClick}>
       <NavLink activeclassname="active" className="text-lg NavLink font-a2" to="/">
