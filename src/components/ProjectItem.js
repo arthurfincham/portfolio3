@@ -5,7 +5,7 @@ import { useState } from 'react';
 import PinIcon from '../svgs/PinIcon';
 import ResponsiveImage from './ResponsiveImage';
 
-export default function ProjectItem({ project, className }) {
+export default function ProjectItem({ project, className, style }) {
   const [isClosed, setIsClosed] = useState(true);
 
   const [isPinned, setIsPinned] = useState(false);
@@ -66,7 +66,7 @@ export default function ProjectItem({ project, className }) {
   };
 
   return (
-    <div className="overflow-hidden rounded-lg shadowTop fcc">
+    <div style={style} className="overflow-hidden rounded-lg shadowTop fcc">
       <div className="relative items-end justify-between w-full px-4 pt-2 overflow-hidden rounded-t-lg shadowTop bg-amber-100 fr">
         <div className="space-x-2 fr ">
           <Link url={project.repoURL} text="GitHub" />
