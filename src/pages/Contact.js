@@ -30,6 +30,9 @@ export default function Contact() {
     );
     e.target.reset();
   };
+
+  const inputClasses = 'w-full px-3 py-2  bg-white rounded-md shadow-md focus:outline-0';
+
   return (
     <div className="container px-5 py-12 mx-auto max-w-[600px]">
       <div className="w-full mb-2 text-center fcc">
@@ -43,12 +46,7 @@ export default function Contact() {
                 <label htmlFor="name" className="text-sm leading-7 font-mono3 ">
                   NAME
                 </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="user_name"
-                  className="w-full px-3 py-1 text-base leading-8 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 font-a4 focus:ring-indigo-200"
-                />
+                <input type="text" id="name" name="user_name" className={inputClasses} />
               </div>
             </div>
             <div className="w-full xs:w-1/2 xs:ml-2">
@@ -56,16 +54,11 @@ export default function Contact() {
                 <label htmlFor="email" className="text-sm leading-7 font-mono3 ">
                   EMAIL
                 </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="user_email"
-                  className="w-full px-3 py-1 text-base leading-8 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 font-a4 focus:ring-indigo-200"
-                />
+                <input type="email" id="email" name="user_email" className={inputClasses} />
               </div>
             </div>
           </div>
-          <div className="w-full">
+          <div className="w-full mt-4">
             <div className="relative">
               <label htmlFor="message" className="text-sm leading-7 font-mono3 ">
                 MESSAGE
@@ -73,14 +66,12 @@ export default function Contact() {
               <textarea
                 id="message"
                 name="message"
-                className="w-full h-32 px-3 py-1 text-base leading-6 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none resize-none focus:border-indigo-500 focus:bg-white focus:ring-2 font-a4 focus:ring-indigo-200"
+                className="w-full h-48 px-3 py-1 bg-white rounded rounded-lg shadow-lg outline-none resize-none font-a4 focus:border-0"
               ></textarea>
             </div>
           </div>
-          <div className="w-full p-2">
-            <button className="flex px-4 py-2 mx-auto text-lg border-[.1em] rounded-lg hover:bg-amber-200/50 border-black rounded font-a2 focus:outline-none bg-blue-gradient">
-              Send
-            </button>
+          <div className="w-full p-2 mt-4">
+            <button className="flex px-4 py-2 mx-auto text-lg bg-white rounded-md shadow-md hover:bg-amber-50 font-a2">Send</button>
           </div>
         </form>
       </div>

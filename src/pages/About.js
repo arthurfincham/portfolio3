@@ -2,20 +2,23 @@ import GitHub from '../svgs/GitHub';
 import LinkedIn from '../svgs/LinkedIn';
 
 export default function About() {
-  const buttonClasses = 'w-[150px] h-[60px] border-black border-[.1em] shadow-lg bg-amber-200/10 hover:bg-amber-200/50 rounded-lg fcc';
+  const buttonClasses = 'w-[150px] h-[60px] shadow-lg bg-white hover:bg-amber-50 rounded-lg fcc';
   return (
-    <div className="items-center justify-center w-full mx-auto md:mx-0  md:space-x-12 space-y-8  md:space-y-0 h-3/5 fcc md:flex-row max-w-[1000px] mr-24">
-      <div className="w-auto md:items-end frc md:flex-column">
-        <div className="max-w-[45ch]">
-          <h1 className="text-6xl md:text-right md:text-7xl">arthur fincham</h1>
-          <p className="text-lg md:text-right font-a3">
-            i am a full-stack developer with an eye for design. Makers Academy grad. currently enjoying Ruby on Rails and React.
-          </p>
+    <div className="w-full h-4/5 sm:h-3/4 fcc">
+      <div className="px-8 space-y-12 sm:space-y-0 fcc sm:flex-row xl:mr-24">
+        <div className="w-full sm:w-2/3">
+          <div className="max-w-[90ch] fc text-center sm:text-right sm:items-end">
+            <h1 className="text-8xl md:text-9xl">arthur fincham</h1>
+            <p className="max-w-[34ch] text-2xl md:text-3xl font-a3">
+              i am a <span className="text-indigo-600 ">full-stack developer</span> with an eye for design. Makers Academy grad. currently enjoying{' '}
+              <span className="text-indigo-600">Ruby on Rails</span> and <span className="text-indigo-600 ">React</span>.
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="items-start w-auto space-x-6 md:space-x-0 md:space-y-6 frc sm:flex-col">
-        <GitHub className={buttonClasses} />
-        <LinkedIn className={buttonClasses} />
+        <div className="w-full space-y-8 sm:w-1/3 fcc">
+          <GitHub className={buttonClasses} />
+          <LinkedIn className={buttonClasses} />
+        </div>
       </div>
     </div>
   );

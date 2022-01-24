@@ -5,7 +5,7 @@ export default function Projects() {
   const projects = [gustApp, chitter, classNotes, acebook, newsforce, fontApp];
 
   return (
-    <div className="flex-wrap w-full fcc lg:flex-row ">
+    <div className="flex-wrap w-full bg-amber-100 fcc lg:flex-row">
       {projects.map((project, index) => {
         return (
           <div key={index} className="w-5/6 m-6 lg:w-5/12 fcc">

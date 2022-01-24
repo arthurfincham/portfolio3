@@ -114,3 +114,11 @@ main {
   text-align: center;
   transform: rotate(180deg);
 }
+
+.shadowTop {
+  box-shadow: 0 0px 25px -8px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.navContentMob {
+  z-index: 100;
+}

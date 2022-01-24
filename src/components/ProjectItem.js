@@ -22,11 +22,16 @@ export default function ProjectItem({ project, className }) {
   };
 
   const handleExit = () => {
-    setIsClosed(!isClosed);
+    if (!isClosed) {
+      setIsClosed(!isClosed);
+    }
   };
 
   const handleClick = () => {
     setIsPinned(!isPinned);
+    if (isPinned) {
+      setIsClosed(!isClosed);
+    }
   };
 
   const infoMaster = () => {
@@ -51,47 +56,31 @@ export default function ProjectItem({ project, className }) {
     strokeWidth: '25px',
   };
 
-  const Link = ({ url }) => {
+  const Link = ({ url, text }) => {
     return (
-      <LinkTab>
+      <div className="h-auto p-1 px-2 rounded-t-lg shadow-lg bg-amber-50 hover:bg-amber-100">
         <a href={url} target="blank" className="text-sm font-mono3">
-          Site
+          {text}
         </a>
-      </LinkTab>
-    );
-  };
-
-  const Tab = ({ children }) => {
-    return (
-      <div className="flex items-center h-auto p-1 px-2 space-x-1 rounded-t-lg shadow-md bg-amber-50 border-[.1em] border-black border-b-0 ">
-        {children}
       </div>
-    );
-  };
-
-  const LinkTab = ({ children }) => {
-    return (
-      <div className="h-auto p-1 px-2 rounded-t-lg shadow-lg bg-amber-50 hover:bg-amber-100 border-[.1em] border-black border-b-0">{children}</div>
     );
   };
 
   return (
-    <div className="overflow-hidden rounded-lg shadow-lg fcc">
-      <div className="relative items-end w-full px-4 pt-2 space-x-2 overflow-hidden rounded-t-lg bg-gray-200/50 fr border-black border-b-[.1em]">
-        <Tab>
-          <span className="text-xl font-mono1">{project.title}</span>
-        </Tab>
-        <LinkTab>
-          <a href={project.repoURL} target="blank" className="text-sm font-mono3">
-            GitHub
-          </a>
-        </LinkTab>
-        {project.liveLink ? <Link url={project.liveLink} /> : ''}
-        {isPinned ? <PinIcon styles={pinStyle} className="w-[25px] h-[25px] absolute right-3 top-3" /> : ''}
+    <div className="overflow-hidden rounded-lg shadowTop fcc">
+      <div className="relative items-end justify-between w-full px-4 pt-2 overflow-hidden rounded-t-lg shadowTop bg-amber-100 fr">
+        <div className="space-x-2 fr ">
+          <Link url={project.repoURL} text="GitHub" />
+          {project.liveLink ? <Link url={project.liveLink} text="Site" /> : ''}
+        </div>
+        <div className="items-center space-x-1 fr">
+          {isPinned ? <PinIcon styles={pinStyle} className="w-[15px] h-[15px] mb-1 " /> : ''}
+          <span className="text-xl font-a1">{project.title}</span>
+        </div>
       </div>
       <div className={className} ref={imageRef} onMouseEnter={handleEnter} onMouseLeave={handleExit} onClick={handleClick}>
         <img src={project.imagePath} className="w-full rounded-b-lg shadow-lg projectImage" />
-        <animated.div style={infoStyle} className="absolute bottom-0 w-full overflow-hidden shadow-lg bg-amber-50">
+        <animated.div style={infoStyle} className="absolute bottom-0 w-full overflow-hidden shadow-lg bg-amber-100">
           <div ref={ref} className="w-full px-2 pb-4">
             <div className="w-full p-3 py-6 space-y-2 text-sm font-a3 fc">
               {project.description.map((point) => {
