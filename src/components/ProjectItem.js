@@ -27,10 +27,20 @@ export default function ProjectItem({ project, className }) {
 
   const Link = ({ url }) => {
     return (
-      <a href={url} className="text-sm font-mono3">
-        LIVE SITE
-      </a>
+      <LinkTab>
+        <a href={url} target="blank" className="text-sm font-mono3">
+          Site
+        </a>
+      </LinkTab>
     );
+  };
+
+  const Tab = ({ children }) => {
+    return <div className="h-auto p-1 px-2 border-2 border-b-0 shadow-lg rounded-t-xl bg-amber-100">{children}</div>;
+  };
+
+  const LinkTab = ({ children }) => {
+    return <div className="h-auto p-1 px-2 border-2 border-b-0 shadow-lg rounded-t-xl bg-amber-100 hover:border-indigo-500">{children}</div>;
   };
 
   const subTitleStyle = {
@@ -38,40 +48,39 @@ export default function ProjectItem({ project, className }) {
   };
 
   return (
-    <div className="items-end space-x-1 fr">
-      <div style={subTitleStyle} className="w-auto text-sm rotateElement fcc">
-        <p className="text-xl font-mono3">{project.subTitle}</p>
-      </div>
-      <div className="fcc">
-        <div className="items-center justify-between w-full px-2 fr">
-          <h2 className="text-4xl font-a1">{project.title}</h2>
-          <a href={project.repoURL} className="text-sm font-mono3">
-            GITHUB
+    <div className="border-2 rounded-lg fcc">
+      <div className="items-end w-full px-4 pt-2 space-x-2 border-b-2 rounded-t-lg shadow-lg bg-amber-50 fr">
+        <Tab>
+          <span className="font-mono1">{project.title}</span>
+        </Tab>
+        <LinkTab>
+          <a href={project.repoURL} target="blank" className="text-sm font-mono3">
+            GitHub
           </a>
-          {project.liveLink ? <Link url={project.liveLink} /> : ''}
-        </div>
-        <div className={className} onMouseEnter={handleEnter} onMouseLeave={handleExit} ref={imageRef}>
-          <img src={project.imagePath} className="w-full rounded-lg shadow-lg projectImage" />
-          <animated.div style={infoStyle} className="absolute bottom-0 w-full overflow-hidden rounded-lg shadow-lg bg-amber-100">
-            <div ref={ref} className="w-full px-2 pb-4">
-              <div className="w-full p-3 py-6 space-y-2 text-sm font-a3 fc">
-                {project.description.map((point) => {
-                  return <span className="">{point}</span>;
-                })}
-              </div>
-              <div className="fr">
-                {project.stack.map((tool) => {
-                  return (
-                    <div className="items-center justify-center px-2 space-x-2 fr">
-                      {iconSelector(tool, 'w-1/5 h-auto')}
-                      <span className="text-sm font-mono3">{capitalize(tool)}</span>
-                    </div>
-                  );
-                })}
-              </div>
+        </LinkTab>
+        {project.liveLink ? <Link url={project.liveLink} /> : ''}
+      </div>
+      <div className={className} onMouseEnter={handleEnter} onMouseLeave={handleExit} ref={imageRef}>
+        <img src={project.imagePath} className="w-full rounded-b-lg shadow-lg projectImage" />
+        <animated.div style={infoStyle} className="absolute bottom-0 w-full overflow-hidden rounded-lg shadow-lg bg-amber-100">
+          <div ref={ref} className="w-full px-2 pb-4">
+            <div className="w-full p-3 py-6 space-y-2 text-sm font-a3 fc">
+              {project.description.map((point) => {
+                return <span className="">{point}</span>;
+              })}
             </div>
-          </animated.div>
-        </div>
+            <div className="fr">
+              {project.stack.map((tool) => {
+                return (
+                  <div className="items-center justify-center px-2 space-x-2 fr">
+                    {iconSelector(tool, 'w-1/5 h-auto')}
+                    <span className="text-sm font-mono3">{capitalize(tool)}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </animated.div>
       </div>
     </div>
   );

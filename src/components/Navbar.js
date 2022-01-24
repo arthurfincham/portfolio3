@@ -30,8 +30,8 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="sm:overflow-hidden w-full bg-amber-100 relative h-[50px] fr justify-center shadow-lg sm:px-4">
-      <div className="fr w-full justify-end max-w-[1250px]">
+    <nav className="sm:overflow-hidden w-full bg-amber-100 relative h-[50px] fr justify-center shadow-lg xxl:px-24">
+      <div className="justify-end w-full fr xxl:mr-2">
         <NavLinks className="items-center hidden w-auto mx-4 mt-2 space-x-6 sm:flex " />
         <div onClick={() => handleClick()} className="z-10 mr-4 hover:cursor-pointer">
           <animated.div style={arrowRotation} className="w-auto h-full sm:hidden">
