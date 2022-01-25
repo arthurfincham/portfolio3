@@ -64,7 +64,7 @@ export default function Navbar() {
       </div>
       <animated.div style={navSpring} className=" navContentMob mobileNavBar absolute top-[50px] w-full  z-10 flex sm:hidden fc justify-start p-4 ">
         <div className="w-full h-[80vh]   ">
-          <NavLinks handleClick={handleClick} className="items-start space-y-6 fc " />
+          <NavLinks handleClick={handleClick} className="items-start space-y-6 navLinksClassName fc " />
         </div>
       </animated.div>
     </nav>

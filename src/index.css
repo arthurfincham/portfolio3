@@ -5,6 +5,7 @@
 @import './css/customClasses.css';
 @import './fonts/AktivGrotesk/AktivGrotesk.css';
 @import './fonts/IBMPlexMono/IBMPlexMono.css';
+@import './css/pageTransitions.css';
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -145,24 +146,13 @@ main {
   background: linear-gradient(180deg, rgba(255, 244, 199, 1) 64%, rgba(255, 255, 255, 0) 100%);
 }
 
-.fade-enter {
-  opacity: 0;
-  transform: translate(0, 25px);
-  z-index: 1;
-}
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transform: translate(0, 0);
-
-  transition: opacity 250ms ease-out, transform 300ms ease;
-}
-.fade-exit {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-.fade-exit.fade-exit-active {
-  opacity: 0;
-  transform: translate(0, 30px);
-
-  transition: opacity 250ms ease-out, transform 300ms ease;
+.navbarUnderline {
+  position: absolute;
+  top: 0;
+  right: 110%;
+  width: 100%;
+  height: 90%;
+  border-right: 120px solid #5046e5;
+  border-top: none;
+  border-radius: 5px;
 }

@@ -16,6 +16,7 @@ export default function NavLinks({ className, handleClick }) {
       <NavLink activeclassname="active" className="w-1/2 text-lg sm:w-auto NavLink font-a2" to="/contact">
         Contact
       </NavLink>
+      {/* <div className="navbarUnderline" /> */}
     </div>
   );
 }

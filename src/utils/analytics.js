@@ -4,7 +4,7 @@ const TRACKING_ID = process.env.REACT_APP_GA_TAG;
 
 function init() {
   // Enable debug mode on the local development environment
-  const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+  const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'nodebug';
   ReactGA.initialize(TRACKING_ID, { debug: isDev });
 }
 
