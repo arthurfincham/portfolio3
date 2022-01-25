@@ -39,7 +39,7 @@ export default function Contact() {
         <p className="py-6 text-2xl font-bold leading-relaxed tracking-wide font-mono3 lg:w-2/3">GET IN TOUCH</p>
       </div>
       <div className="w-full">
-        <form ref={form} onSubmit={sendEmail} className="w-full fcc">
+        <form ref={form} onSubmit={sendEmail} className="w-full fcc" data-testid="contactForm">
           <div className="w-full fcc xs:flex-row">
             <div className="w-full xs:w-1/2 xs:mr-2">
               <div className="relative">
