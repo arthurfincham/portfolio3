@@ -26,6 +26,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   height: 92vh;
+  overflow-y: scroll;
 }
 
 .code-font {
@@ -142,4 +143,26 @@ main {
 .navContentMob {
   background: rgb(255, 244, 199);
   background: linear-gradient(180deg, rgba(255, 244, 199, 1) 64%, rgba(255, 255, 255, 0) 100%);
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translate(0, 25px);
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+
+  transition: opacity 250ms ease-out, transform 300ms ease;
+}
+.fade-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transform: translate(0, 30px);
+
+  transition: opacity 250ms ease-out, transform 300ms ease;
 }
