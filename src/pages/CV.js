@@ -23,6 +23,8 @@ export default function CV() {
     );
   };
 
+  const testvar = process.env.REACT_APP_TEST_VAR;
+
   const Header = ({ text }) => {
     return <span className="mt-4 text-lg text-gray-500 font-mono2">{text}</span>;
   };
@@ -53,6 +55,7 @@ export default function CV() {
         <Item props={makers} />
         <Item props={kcl} />
         <Header text="EXPERIENCE" />
+        <p className="text-black bg-red-100">{testvar}</p>
         <Item props={rga} />
       </div>
     </div>
