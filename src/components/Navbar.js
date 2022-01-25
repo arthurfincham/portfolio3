@@ -45,15 +45,15 @@ export default function Navbar() {
       case '/contact':
         return 'Contact';
       default:
-        return '';
+        return 'About';
     }
   };
 
   return (
     <nav className="sm:overflow-hidden w-full bg-amber-100 relative h-[50px] fr justify-center shadow-md xxl:px-24">
-      <div className="z-40 items-center justify-between w-full px-2 shadow-md sm:justify-end fr xxl:mr-2 mainNavWrapper">
+      <div className="z-40 items-center justify-between w-full px-2 shadow-md sm:shadow-none sm:justify-end fr xxl:mr-2 mainNavWrapper">
         <NavLinks className="relative items-center hidden w-auto mx-4 mt-2 space-x-6 sm:flex" />
-        <animated.span style={mobTitleStyles} className="mt-1 ml-3 text-xl font-a1 mobActive">
+        <animated.span style={mobTitleStyles} className="mt-1 ml-3 text-xl sm:hidden font-a1 mobActive">
           {mobNavTitle(location.pathname)}
         </animated.span>
         <div onClick={() => handleClick()} className=" w-[50px] h-[50px] ">

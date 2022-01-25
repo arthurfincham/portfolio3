@@ -72,9 +72,9 @@ export default function ProjectItem({ project, className, style, addImage }) {
   const Link = ({ url, text, label }) => {
     return (
       <div className="h-auto p-1 px-2 rounded-t-lg shadow-lg bg-amber-50 hover:bg-amber-100">
-        <ReactGA.OutboundLink eventLabel={`${label}-${text}-link`} to={url} target="_blank" className="text-sm font-mono-3">
+        <a href={url} target="_blank" className="text-sm font-mono3">
           {text}
-        </ReactGA.OutboundLink>
+        </a>
       </div>
     );
   };

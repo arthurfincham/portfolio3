@@ -58,7 +58,7 @@ export const classNotes = {
   imagePath: 'classnotes',
 };
 export const acebook = {
-  title: 'acebook',
+  title: 'Acebook',
   repoURL: 'https://github.com/emanfolo/acebook-Jeamm-Team',
   subTitle: 'Group Engineering Project',
   description: ['Facebook clone.', 'RoR backend.', 'Built with a remote team.', 'Full authentication.', 'AWS S3 for image uploading.'],
@@ -83,7 +83,7 @@ export const chitter = {
 };
 
 export const countries = {
-  title: 'Countries Quiz',
+  title: 'Countries',
   repoURL: 'https://github.com/arthurfincham/countries-of-the-world',
   subTitle: 'Personal Project',
   description: ['Interactive countries quiz.', 'Pan and zoom SVG.', 'MaterialUI progress for each continent.'],

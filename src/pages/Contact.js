@@ -34,7 +34,7 @@ export default function Contact() {
   const inputClasses = 'w-full px-3 py-2  bg-white rounded-md shadow-md focus:outline-0';
 
   return (
-    <div className="container px-5 py-12 mx-auto max-w-[600px]">
+    <div className="container px-5 sm:py-12 mx-auto max-w-[600px]">
       <div className="w-full mb-2 text-center fcc">
         <p className="py-6 text-2xl font-bold leading-relaxed tracking-wide font-mono3 lg:w-2/3">GET IN TOUCH</p>
       </div>
