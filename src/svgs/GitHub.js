@@ -1,6 +1,6 @@
 export default function GitHub({ className }) {
   return (
-    <a href="https://github.com/arthurfincham" target="blank">
+    <a href="https://github.com/arthurfincham" target="blank" data-testid="arthurGitHubLink">
       <button className={className}>
         <svg className="" height="90" width="90" viewBox="0.02 11.789 31.851 9.234" xmlns="http://www.w3.org/2000/svg" alt="githubLogo">
           <path

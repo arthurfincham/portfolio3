@@ -18,18 +18,6 @@ export default function Projects() {
     }
   };
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   checkLoaded(console.log('callback'));
-  // }, []);
-
-  // const checkLoaded = (callback) => {
-  //   if (imagesLoaded.length > 8) {
-  //     console.log('LOADED');
-  //   }
-  //   return callback;
-  // };
-
   const loadingStyle = {
     opacity: loading ? 0 : 1,
   };

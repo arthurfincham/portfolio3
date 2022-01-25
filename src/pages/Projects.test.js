@@ -1,7 +1,7 @@
 import Projects from './Projects';
 import { render, screen, fireEvent, createEvent } from '@testing-library/react';
 
-describe('Links are correct', () => {
+describe('Project links are correct', () => {
   test('Gust', () => {
     render(<Projects />);
     expect(screen.getByTestId('Gust-GitHubLink')).toHaveAttribute('href', 'https://github.com/arthurfincham/gust');

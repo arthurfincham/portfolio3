@@ -1,6 +1,6 @@
 export default function LinkedIn({ className }) {
   return (
-    <a href="https://www.linkedin.com/in/arthurfincham/" target="blank">
+    <a href="https://www.linkedin.com/in/arthurfincham/" target="blank" data-testid="arthurLinkedInLink">
       <button className={className}>
         <svg
           width="100%"
