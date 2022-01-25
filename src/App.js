@@ -1,15 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as Pages from './pages/pagesExporter';
 import Navbar from './components/Navbar';
-import ReactGA from 'react-ga';
+import useGoogleAnalytics from './utils/useGoogleAnalytics';
 
-const TRACKING_ID = process.env.REACT_APP_GA_TAG;
-ReactGA.initialize(TRACKING_ID);
-ReactGA.pageview(window.location.pathname);
-
-function App() {
+function GARoutes() {
+  useGoogleAnalytics();
   return (
-    <Router>
+    <>
       <Navbar />
       <main>
         <Routes>
@@ -19,6 +16,14 @@ function App() {
           <Route path="/contact" element={<Pages.Contact />} />
         </Routes>
       </main>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <GARoutes />
     </Router>
   );
 }
