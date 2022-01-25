@@ -1,6 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as Pages from './pages/pagesExporter';
 import Navbar from './components/Navbar';
+import ReactGA from 'react-ga';
+
+const TRACKING_ID = process.env.REACT_APP_GA_TAG;
+ReactGA.initialize(TRACKING_ID);
+ReactGA.pageview(window.location.pathname);
 
 function App() {
   return (
