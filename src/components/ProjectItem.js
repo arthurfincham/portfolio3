@@ -4,6 +4,7 @@ import useMeasure from 'react-use-measure';
 import { useState } from 'react';
 import PinIcon from '../svgs/PinIcon';
 import ResponsiveImage from './ResponsiveImage';
+import ReactGA from 'react-ga';
 
 export default function ProjectItem({ project, className, style, addImage }) {
   const [isClosed, setIsClosed] = useState(true);
@@ -55,12 +56,12 @@ export default function ProjectItem({ project, className, style, addImage }) {
     strokeWidth: '25px',
   };
 
-  const Link = ({ url, text }) => {
+  const Link = ({ url, text, label }) => {
     return (
       <div className="h-auto p-1 px-2 rounded-t-lg shadow-lg bg-amber-50 hover:bg-amber-100">
-        <a href={url} target="blank" className="text-sm font-mono3">
+        <ReactGA.OutboundLink eventLabel={`${label}-${text}-link`} to={url} target="_blank" className="text-sm font-mono-3">
           {text}
-        </a>
+        </ReactGA.OutboundLink>
       </div>
     );
   };
@@ -69,8 +70,8 @@ export default function ProjectItem({ project, className, style, addImage }) {
     <div style={style} className="overflow-hidden rounded-lg shadowTop fcc">
       <div className="relative items-end justify-between w-full px-4 pt-2 overflow-hidden rounded-t-lg shadowTop bg-amber-100 fr">
         <div className="space-x-2 fr ">
-          <Link url={project.repoURL} text="GitHub" />
-          {project.liveLink ? <Link url={project.liveLink} text="Site" /> : ''}
+          <Link url={project.repoURL} text="GitHub" label={project.title} />
+          {project.liveLink ? <Link url={project.liveLink} text="Site" label={project.title} /> : ''}
         </div>
         <div className="items-center space-x-1 fr">
           {isPinned ? <PinIcon styles={pinStyle} className="w-[15px] h-[15px] mb-1 " /> : ''}
