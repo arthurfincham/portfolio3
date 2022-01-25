@@ -5,7 +5,7 @@ import { useState } from 'react';
 import PinIcon from '../svgs/PinIcon';
 import ResponsiveImage from './ResponsiveImage';
 
-export default function ProjectItem({ project, className, style }) {
+export default function ProjectItem({ project, className, style, addImage }) {
   const [isClosed, setIsClosed] = useState(true);
 
   const [isPinned, setIsPinned] = useState(false);
@@ -78,7 +78,7 @@ export default function ProjectItem({ project, className, style }) {
         </div>
       </div>
       <div className={className} onMouseEnter={handleEnter} onMouseLeave={handleExit} onClick={handleClick}>
-        <ResponsiveImage image={project.imagePath} />
+        <ResponsiveImage image={project.imagePath} addImage={addImage} />
         <animated.div style={infoStyle} className="absolute bottom-0 w-full overflow-hidden shadow-lg bg-amber-100">
           <div ref={ref} className="w-full px-2 pb-4">
             <div className="w-full p-3 py-6 space-y-2 text-sm font-a3 fc">

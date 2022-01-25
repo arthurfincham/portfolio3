@@ -6,16 +6,29 @@ import { TailSpin } from 'react-loader-spinner';
 export default function Projects() {
   const projects = [gustApp, chitter, classNotes, acebook, newsforce, fontApp, countries, licence];
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => {
+  const imagesLoaded = [];
+
+  const addImage = (image) => {
+    imagesLoaded.push(image);
+    console.log(imagesLoaded.length);
+    if (imagesLoaded.length > 7) {
       setLoading(false);
-    }, 800);
+    }
+  };
 
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   checkLoaded(console.log('callback'));
+  // }, []);
+
+  // const checkLoaded = (callback) => {
+  //   if (imagesLoaded.length > 8) {
+  //     console.log('LOADED');
+  //   }
+  //   return callback;
+  // };
 
   const loadingStyle = {
     opacity: loading ? 0 : 1,
@@ -32,7 +45,7 @@ export default function Projects() {
           <div key={index} className="w-5/6 m-6 lg:w-5/12 fcc">
             <div className="space-x-2 fr">
               <div className="space-y-2 fc">
-                <ProjectItem style={loadingStyle} className="relative w-full cursor-pointer " project={project} />
+                <ProjectItem style={loadingStyle} className="relative w-full cursor-pointer " project={project} addImage={addImage} />
               </div>
             </div>
           </div>
