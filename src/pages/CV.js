@@ -29,15 +29,15 @@ export default function CV() {
 
   return (
     <div className="w-full fcc">
-      <div className="w-11/12 h-auto p-12 mb-12 bg-white shadow-xl fc max-w-[800px]">
-        <div className="relative fc sm:items-center">
+      <div className="w-11/12 h-auto p-4 sm:p-12 mb-12 bg-white shadow-xl fc max-w-[800px] relative">
+        <div className="sm:relative fc sm:items-center">
           <h1 className="text-3xl">Arthur Fincham</h1>
           <span className="font-mono2">arthurfincham@me.com</span>
           <span className="font-mono2">London, UK</span>
           <a
             href={PDF}
             target="blank"
-            className="w-[60px] h-[60px] absolute right-0 bg-gray-100 rounded-lg border-[.12em] border-black hover:bg-gray-200 fcc"
+            className="w-[60px] h-[60px] absolute right-3 sm:right-0 bg-gray-100 rounded-lg border-[.12em] border-black hover:bg-gray-200 fcc"
           >
             <PDFIcon className="z-10 w-full h-full " />
           </a>

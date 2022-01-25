@@ -7,30 +7,42 @@ import ResponsiveImage from './ResponsiveImage';
 import ReactGA from 'react-ga';
 
 export default function ProjectItem({ project, className, style, addImage }) {
+  const mobile = window.innerWidth < 400;
+
   const [isClosed, setIsClosed] = useState(true);
 
   const [isPinned, setIsPinned] = useState(false);
 
   const [ref, bounds] = useMeasure();
 
+  const [prevRef, prevBounds] = useMeasure();
+
   const capitalize = (str) => {
     return str.toUpperCase();
   };
 
   const handleEnter = () => {
-    setIsClosed(!isClosed);
-  };
-
-  const handleExit = () => {
-    if (!isClosed) {
+    if (!mobile) {
       setIsClosed(!isClosed);
     }
   };
 
+  const handleExit = () => {
+    if (!mobile) {
+      if (!isClosed) {
+        setIsClosed(!isClosed);
+      }
+    }
+  };
+
   const handleClick = () => {
-    setIsPinned(!isPinned);
-    if (isPinned) {
+    if (mobile) {
       setIsClosed(!isClosed);
+    } else {
+      setIsPinned(!isPinned);
+      if (isPinned) {
+        setIsClosed(!isClosed);
+      }
     }
   };
 
@@ -45,6 +57,7 @@ export default function ProjectItem({ project, className, style, addImage }) {
   };
 
   const infoStyle = useSpring({
+    maxHeight: prevBounds.height,
     height: infoMaster() ? 0 : bounds.height,
     borderTop: infoMaster() ? 'none' : 'solid',
     borderTopWidth: infoMaster() ? '0' : '0.1em',
@@ -78,11 +91,11 @@ export default function ProjectItem({ project, className, style, addImage }) {
           <span className="text-xl font-a1">{project.title}</span>
         </div>
       </div>
-      <div className={className} onMouseEnter={handleEnter} onMouseLeave={handleExit} onClick={handleClick}>
+      <div className={className} onMouseEnter={handleEnter} onMouseLeave={handleExit} onClick={handleClick} ref={prevRef}>
         <ResponsiveImage image={project.imagePath} addImage={addImage} />
         <animated.div style={infoStyle} className="absolute bottom-0 w-full overflow-hidden shadow-lg bg-amber-100">
           <div ref={ref} className="w-full px-2 pb-4">
-            <div className="w-full p-3 py-6 space-y-2 text-sm font-a3 fc">
+            <div className="w-full p-3 py-6 space-y-1 text-xs sm:text-sm sm:space-y-2 font-a3 fc">
               {project.description.map((point, index) => {
                 return (
                   <span key={index} className="">
@@ -94,9 +107,9 @@ export default function ProjectItem({ project, className, style, addImage }) {
             <div className="fr">
               {project.stack.map((tool, index) => {
                 return (
-                  <div key={index} className="items-center justify-center px-2 space-x-2 fr">
-                    {iconSelector(tool, 'w-1/5 h-auto')}
-                    <span className="text-sm font-mono3">{capitalize(tool)}</span>
+                  <div key={index} className="items-center justify-center w-full px-2 space-x-2 fr">
+                    {mobile ? '' : iconSelector(tool, 'w-1/5 h-auto')}
+                    <span className="text-xs sm:text-sm font-mono3">{capitalize(tool)}</span>
                   </div>
                 );
               })}
