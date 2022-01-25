@@ -59,7 +59,7 @@ export const classNotes = {
 };
 export const acebook = {
   title: 'Acebook',
-  repoURL: 'https://github.com/emanfolo/acebook-Jeamm-Team',
+  repoURL: 'https://github.com/arthurfincham/acebook',
   subTitle: 'Group Engineering Project',
   description: ['Facebook clone.', 'RoR backend.', 'Built with a remote team.', 'Full authentication.', 'AWS S3 for image uploading.'],
   stack: ['Rails', 'AWS', 'Heroku', 'PSQL'],

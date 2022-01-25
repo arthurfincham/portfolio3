@@ -1,5 +1,7 @@
 import { iconSelector } from '../svgs/devIcons/iconSelector';
 import { useSpring, animated } from 'react-spring';
+import { ResizeObserver } from '@juggle/resize-observer';
+
 import useMeasure from 'react-use-measure';
 import { useState } from 'react';
 import PinIcon from '../svgs/PinIcon';
@@ -13,9 +15,9 @@ export default function ProjectItem({ project, className, style, addImage }) {
 
   const [isPinned, setIsPinned] = useState(false);
 
-  const [ref, bounds] = useMeasure();
+  const [ref, bounds] = useMeasure({ polyfill: ResizeObserver });
 
-  const [prevRef, prevBounds] = useMeasure();
+  const [prevRef, prevBounds] = useMeasure({ polyfill: ResizeObserver });
 
   const capitalize = (str) => {
     return str.toUpperCase();
@@ -69,10 +71,10 @@ export default function ProjectItem({ project, className, style, addImage }) {
     strokeWidth: '25px',
   };
 
-  const Link = ({ url, text, label }) => {
+  const Link = ({ url, text, label, testID }) => {
     return (
       <div className="h-auto p-1 px-2 rounded-t-lg shadow-lg bg-amber-50 hover:bg-amber-100">
-        <a href={url} target="_blank" className="text-sm font-mono3">
+        <a href={url} target="_blank" className="text-sm font-mono3" data-testid={testID}>
           {text}
         </a>
       </div>
@@ -83,8 +85,8 @@ export default function ProjectItem({ project, className, style, addImage }) {
     <div style={style} className="overflow-hidden rounded-lg shadowTop fcc">
       <div className="relative items-end justify-between w-full px-4 pt-2 overflow-hidden rounded-t-lg shadowTop bg-amber-100 fr">
         <div className="space-x-2 fr ">
-          <Link url={project.repoURL} text="GitHub" label={project.title} />
-          {project.liveLink ? <Link url={project.liveLink} text="Site" label={project.title} /> : ''}
+          <Link url={project.repoURL} text="GitHub" label={project.title} testID={`${project.title}-GitHubLink`} />
+          {project.liveLink ? <Link url={project.liveLink} text="Site" label={project.title} testID={`${project.title}-LiveSiteLink`} /> : ''}
         </div>
         <div className="items-center space-x-1 fr">
           {isPinned ? <PinIcon styles={pinStyle} className="w-[15px] h-[15px] mb-1 " /> : ''}
