@@ -46,9 +46,9 @@ export default function CV() {
         <Header text="ABOUT ME" />
         <p className="my-2 text-sm leading-6 font-a4">
           I'm Arthur, a recent graduate from Maker's Academy. Since I finished university in May 2021, working on Ruby and Javascript, I've been
-          practicing my coding skills everyday to prepare myself for a role as a Full Stack Engineer. At the moment my focus is on React; making an
-          effort to challenge myself and learn more everyday. As a naturally good communicator, I'd love to join a team that collaborates to deliver
-          impactful tech.
+          practicing my coding skills every day to prepare myself for a role as a Full Stack Engineer. At the moment my focus is on React; making an
+          effort to challenge myself and learn more. As a naturally good communicator, I'd love to join a team that collaborates to deliver impactful
+          tech.
         </p>
         <Header text="EDUCATION" />
         <Item props={makers} />
