@@ -29,7 +29,7 @@ export default function CV() {
 
   return (
     <div className="w-full fcc">
-      <div className="w-11/12 h-auto p-4 sm:p-12 mb-12 bg-white shadow-xl fc max-w-[800px] relative">
+      <div className="w-11/12 h-auto p-4 sm:p-12 mb-12 bg-white dark:bg-slate-200 shadow-xl fc max-w-[800px] relative">
         <div className="sm:relative fc sm:items-center">
           <h1 className="text-3xl">Arthur Fincham</h1>
           <span className="font-mono2">arthurfincham@me.com</span>

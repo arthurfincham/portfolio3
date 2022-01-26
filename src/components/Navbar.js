@@ -50,7 +50,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sm:overflow-hidden w-full bg-amber-100 dark:bg-slate-900 relative h-[50px] fr justify-center shadow-md xxl:px-24 dark:text-white">
+    <nav className="sm:overflow-hidden w-full bg-amber-100 dark:bg-slate-900 relative h-[50px] fr justify-center shadow-md dark:shadow-lg xxl:px-24 dark:text-white">
       <div className="z-40 items-center justify-between w-full px-2 shadow-md sm:shadow-none sm:justify-end fr xxl:mr-2 mainNavWrapper">
         <NavLinks className="relative items-center hidden w-auto mx-4 mt-2 space-x-6 sm:flex" />
         <animated.span style={mobTitleStyles} className="mt-1 ml-3 text-xl sm:hidden font-a1 mobActive">

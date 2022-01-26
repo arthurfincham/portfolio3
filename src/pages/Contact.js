@@ -31,7 +31,7 @@ export default function Contact() {
     e.target.reset();
   };
 
-  const inputClasses = 'w-full px-3 py-2  bg-white rounded-md shadow-md focus:outline-0 dark:text-black';
+  const inputClasses = 'w-full px-3 py-2  bg-white rounded-md shadow-md focus:outline-0 dark:text-black ';
 
   return (
     <div className="container px-5 sm:py-12 mx-auto max-w-[600px] dark:text-white">
