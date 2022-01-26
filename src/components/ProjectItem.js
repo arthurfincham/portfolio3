@@ -1,12 +1,10 @@
 import { iconSelector } from '../svgs/devIcons/iconSelector';
 import { useSpring, animated } from 'react-spring';
 import { ResizeObserver } from '@juggle/resize-observer';
-
 import useMeasure from 'react-use-measure';
 import { useState } from 'react';
 import PinIcon from '../svgs/PinIcon';
 import ResponsiveImage from './ResponsiveImage';
-import ReactGA from 'react-ga';
 
 export default function ProjectItem({ project, className, style, addImage }) {
   const mobile = window.innerWidth < 400;
