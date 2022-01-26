@@ -1,15 +1,6 @@
 export default function SinatraLogo({ className }) {
   return (
-    <svg
-      height="100"
-      width="100"
-      className="w-1/4 fill-white stroke-black h-1/4 max-w-[40px]"
-      xmlns="http://www.w3.org/2000/svg"
-      x="0px"
-      y="0px"
-      viewBox="0 0 2500 1699"
-      strokeWidth="30px"
-    >
+    <svg height="100" width="100" className={className} xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 2500 1699" strokeWidth="30px">
       <path
         d="M28.3,1247.9c0,0-201.1-390.6,462.8-609.3C801.7,536.1,1165.9,468.7,1491,457
 	c371-12.7,700.1,51.8,843.6,270.5c103.5,158.2,41,351.5-159.2,501.9c-120.1,89.8-383.7,179.7-559.5,230.4

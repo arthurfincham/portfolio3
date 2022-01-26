@@ -23,7 +23,7 @@ export const fontApp = {
     'Custom themes.',
     'Click-to-copy CDN and CSS.',
   ],
-  stack: ['React', 'Jest', 'MaterialUi', 'Vercel'],
+  stack: ['React', 'Jest', 'Material UI', 'Vercel'],
   liveLink: 'https://font-app.vercel.app/',
   imagePath: 'fontApp',
 };
@@ -39,7 +39,7 @@ export const newsforce = {
     'Filtering based on continent and publisher',
     'Interactive map for filtering.',
   ],
-  stack: ['Rails', 'React', 'Heroku'],
+  stack: ['Rails', 'React', 'Jest', 'Heroku'],
   imagePath: 'newsforce',
 };
 
@@ -86,8 +86,8 @@ export const countries = {
   title: 'Countries',
   repoURL: 'https://github.com/arthurfincham/countries-of-the-world',
   subTitle: 'Personal Project',
-  description: ['Interactive countries quiz.', 'Pan and zoom SVG.', 'MaterialUI progress for each continent.'],
-  stack: ['React', 'MaterialUI', 'Jest', 'Vercel'],
+  description: ['Interactive countries quiz.', 'Pan and zoom SVG.', 'Material UI progress for each continent.'],
+  stack: ['React', 'Material UI', 'Jest', 'Vercel'],
   liveLink: 'https://countries-of-the-world-gules.vercel.app/',
   imagePath: 'countriesQuiz',
 };

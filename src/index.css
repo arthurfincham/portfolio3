@@ -17,7 +17,7 @@ body,
 #root,
 main,
 .App {
-  @apply bg-amber-100;
+  @apply bg-amber-100 dark:bg-slate-900;
 }
 
 main {

@@ -31,10 +31,10 @@ export default function Contact() {
     e.target.reset();
   };
 
-  const inputClasses = 'w-full px-3 py-2  bg-white rounded-md shadow-md focus:outline-0';
+  const inputClasses = 'w-full px-3 py-2  bg-white rounded-md shadow-md focus:outline-0 dark:text-black';
 
   return (
-    <div className="container px-5 sm:py-12 mx-auto max-w-[600px]">
+    <div className="container px-5 sm:py-12 mx-auto max-w-[600px] dark:text-white">
       <div className="w-full mb-2 text-center fcc">
         <p className="py-6 text-2xl font-bold leading-relaxed tracking-wide font-mono3 lg:w-2/3">GET IN TOUCH</p>
       </div>
@@ -66,12 +66,12 @@ export default function Contact() {
               <textarea
                 id="message"
                 name="message"
-                className="w-full h-48 px-3 py-1 bg-white rounded rounded-lg shadow-lg outline-none resize-none font-a4 focus:border-0"
+                className="w-full h-48 px-3 py-1 bg-white rounded rounded-lg shadow-lg outline-none resize-none font-a4 focus:border-0 dark:text-black"
               ></textarea>
             </div>
           </div>
           <div className="w-full p-2 mt-4">
-            <button className="flex px-4 py-2 mx-auto text-lg bg-white rounded-md shadow-md hover:bg-amber-50 font-a2">Send</button>
+            <button className="flex px-4 py-2 mx-auto text-lg bg-white rounded-md shadow-md dark:text-black hover:bg-amber-50 font-a2">Send</button>
           </div>
         </form>
       </div>

@@ -22,7 +22,7 @@ export default function Projects() {
     opacity: loading ? 0 : 1,
   };
   return (
-    <div className="flex-wrap w-full bg-amber-100 fcc lg:flex-row">
+    <div className="flex-wrap w-full bg-amber-100 dark:bg-slate-900 fcc lg:flex-row">
       {loading && (
         <div className="w-full fcc">
           <TailSpin color="#4F47E6" height={80} width={80} />
