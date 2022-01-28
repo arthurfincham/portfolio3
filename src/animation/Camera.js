@@ -4,8 +4,8 @@ import * as TWEEN from '@tweenjs/tween.js';
 
 export default function Camera(w, h, renderer, setLoading) {
   const camera = new THREE.PerspectiveCamera(45, w / h, 1, 1000);
-  camera.position.set(-167, 171, 364);
-
+  camera.position.set(-107, 50, 10);
+  // camera.position.set(-167, 171, 364);
   const controls = new OrbitControls(camera, renderer.domElement);
 
   document.addEventListener('keypress', function (e) {

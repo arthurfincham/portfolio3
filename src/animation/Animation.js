@@ -43,7 +43,7 @@ export default class Animation extends Component {
     var animate = function () {
       requestAnimationFrame(animate);
       renderer.render(scene, myCam);
-      spinCam();
+      // spinCam();
       TWEEN.update();
     };
 
