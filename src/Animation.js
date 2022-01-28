@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
-import myModel from './model.obj';
+import myModel from './tinker1.obj';
 import * as TWEEN from '@tweenjs/tween.js';
 
 import { animated } from 'react-spring';
@@ -102,7 +102,7 @@ const tinker = (scene, setPreLoading) => {
   const mtlLoader = new MTLLoader();
   const objLoader = new OBJLoader();
 
-  mtlLoader.load('obj.mtl', function (materials) {
+  mtlLoader.load('obj1.mtl', function (materials) {
     materials.preload();
 
     objLoader.setMaterials(materials);
@@ -126,7 +126,18 @@ const screen = (scene) => {
     scene.add(cylinder);
   };
 
+  const renderPhone = (width, depth, height, step, x, y) => {
+    const geometry = new THREE.BoxGeometry(width, depth, height);
+    const texture = new THREE.TextureLoader().load('mobPic.png');
+    const material = new THREE.MeshBasicMaterial({ map: texture });
+
+    const cylinder = new THREE.Mesh(geometry, material);
+    cylinder.position.set(x, step, y);
+    scene.add(cylinder);
+  };
+
   renderScreen(37.5, 19.5, 0.2, 51.4, -0.2, -26.05);
+  renderPhone(5.4, 0.5, 10.7, 35.7, -33, -10);
 };
 
 const MyCamera = (w, h, renderer, setLoading) => {
@@ -136,7 +147,7 @@ const MyCamera = (w, h, renderer, setLoading) => {
   const controls = new OrbitControls(camera, renderer.domElement);
 
   document.addEventListener('keypress', function (e) {
-    setCam();
+    window.innerWidth < 640 ? setMob() : setCam();
   });
 
   const moveCam = () => {
@@ -185,5 +196,53 @@ const MyCamera = (w, h, renderer, setLoading) => {
         moveCam();
       });
   };
+
+  const moveMob = () => {
+    console.log('click');
+    const tar = controls.target;
+    const coords = camera.position;
+    const rot = camera.rotation;
+    new TWEEN.Tween(coords)
+      .to({ x: -33.164, y: 46, z: -10.9 })
+      .onUpdate(() => camera.position.set(coords.x, coords.y, coords.z))
+      .start()
+      .easing(TWEEN.Easing.Quadratic.Out);
+
+    new TWEEN.Tween(rot)
+      .to({ x: -1.558, y: -0.00071, z: -0.00574 })
+      .onUpdate(() => camera.rotation.set(rot.x, rot.y, rot.z))
+      .start();
+    new TWEEN.Tween(tar)
+      .to({ x: -33.16, y: 0.454, z: -11.47 })
+      .onUpdate(() => controls.target.set(rot.x, rot.y, rot.z))
+      .start()
+      .onComplete(function () {
+        setLoading(false);
+      });
+  };
+
+  const setMob = () => {
+    const tar = controls.target;
+    const coords = camera.position;
+    const rot = camera.rotation;
+    new TWEEN.Tween(coords)
+      .to({ x: -55.5, y: 219.1, z: 71.8 })
+      .onUpdate(() => camera.position.set(coords.x, coords.y, coords.z))
+      .start()
+      .easing(TWEEN.Easing.Quadratic.Out);
+
+    new TWEEN.Tween(rot)
+      .to({ x: -1.208, y: -0.1, z: -0.27 })
+      .onUpdate(() => camera.rotation.set(rot.x, rot.y, rot.z))
+      .start();
+    new TWEEN.Tween(tar)
+      .to({ x: -27, y: 0.5, z: -11 })
+      .onUpdate(() => controls.target.set(rot.x, rot.y, rot.z))
+      .start()
+      .onComplete(function () {
+        moveMob();
+      });
+  };
+
   return camera;
 };
