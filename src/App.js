@@ -4,9 +4,9 @@ import Navbar from './components/Navbar';
 import useGoogleAnalytics from './utils/useGoogleAnalytics';
 import { useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import Animation from './Animation';
+import Animation from './animation/Animation';
 import { useState } from 'react';
-import { useSpring, animated } from 'react-spring';
+import { useSpring } from 'react-spring';
 
 function GARoutes() {
   useGoogleAnalytics();
