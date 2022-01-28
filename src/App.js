@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as Pages from './pages/pagesExporter';
+import { animated } from 'react-spring';
+
 import Navbar from './components/Navbar';
 import useGoogleAnalytics from './utils/useGoogleAnalytics';
 import { useLocation } from 'react-router-dom';
@@ -59,7 +61,18 @@ function App() {
 
   return (
     <>
-      {loading && <Animation setLoading={setLoading} setPreLoading={setPreLoading} divStyle={divStyle()} textStyle={textStyle} />}
+      {loading && (
+        <div className="relative">
+          <animated.button
+            style={textStyle}
+            id="mobileEnterButton"
+            className="fixed z-20 py-3 px-4 rounded-lg bottom-20 left-[50%] enterButton border border-white text-2xl tracking-wide font-a2 text-white"
+          >
+            enter
+          </animated.button>
+          <Animation setLoading={setLoading} setPreLoading={setPreLoading} divStyle={divStyle()} textStyle={textStyle} />
+        </div>
+      )}
       {!loading && (
         <Router>
           <GARoutes />

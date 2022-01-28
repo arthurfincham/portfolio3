@@ -12,6 +12,15 @@ export default function Camera(w, h, renderer, setLoading) {
     window.innerWidth < 640 ? setMob() : setCam();
   });
 
+  const touchButton = document.getElementById('mobileEnterButton');
+  touchButton.addEventListener('click', function (e) {
+    window.innerWidth < 640 ? setMob() : setCam();
+  });
+
+  touchButton.addEventListener('touchend', function (e) {
+    window.innerWidth < 640 ? setMob() : setCam();
+  });
+
   const tar = controls.target;
   const coords = camera.position;
   const rot = camera.rotation;
