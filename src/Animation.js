@@ -4,14 +4,14 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
 import myModel from './model.obj';
+import * as TWEEN from '@tweenjs/tween.js';
 
 export default class Animation extends Component {
   componentDidMount() {
     const scene = new THREE.Scene();
-    const w = 700;
-    const h = 700;
-    const camera = new THREE.PerspectiveCamera(45, w / h, 1, 1000);
-    camera.position.set(-230, 120, 10);
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+
     const renderer = new THREE.WebGLRenderer({ antialias: true, autoSize: true });
 
     renderer.setSize(w, h);
@@ -25,18 +25,12 @@ export default class Animation extends Component {
     tinker(scene);
     screen(scene);
 
-    const controls = new OrbitControls(camera, renderer.domElement);
-
-    var period = 20;
-    var clock = new THREE.Clock();
-    var matrix = new THREE.Matrix4();
+    const myCam = MyCamera(w, h, renderer, this.props.setLoading);
 
     var animate = function () {
       requestAnimationFrame(animate);
-      matrix.makeRotationY((clock.getDelta() * 2 * Math.PI) / period);
-      camera.position.applyMatrix4(matrix);
-      camera.lookAt(0, 0, 0);
-      renderer.render(scene, camera);
+      renderer.render(scene, myCam);
+      TWEEN.update();
     };
     animate();
   }
@@ -103,7 +97,7 @@ const tinker = (scene) => {
 const screen = (scene) => {
   const renderScreen = (width, depth, height, step, x, y) => {
     const geometry = new THREE.BoxGeometry(width, depth, height);
-    const texture = new THREE.TextureLoader().load('code.png');
+    const texture = new THREE.TextureLoader().load('sitePic.png');
     const material = new THREE.MeshLambertMaterial({ map: texture });
 
     const cylinder = new THREE.Mesh(geometry, material);
@@ -112,4 +106,38 @@ const screen = (scene) => {
   };
 
   renderScreen(37.5, 19.5, 0.2, 51.4, -0.2, -26.05);
+};
+
+const MyCamera = (w, h, renderer, setLoading) => {
+  const camera = new THREE.PerspectiveCamera(45, w / h, 1, 1000);
+  camera.position.set(-167, 171, 364);
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+
+  const timer = setTimeout(() => {
+    moveCam();
+  }, 2000);
+
+  const moveCam = () => {
+    console.log('click');
+    const tar = { x: 0, y: 0, z: 0 };
+    const coords = { x: -167, y: 171, z: 364 };
+    const rot = { x: -0.44, y: -0.39, z: -0.17 };
+    new TWEEN.Tween(coords)
+      .to({ x: -3.9, y: 53, z: -9.8 })
+      .onUpdate(() => camera.position.set(coords.x, coords.y, coords.z))
+      .start();
+    new TWEEN.Tween(rot)
+      .to({ x: -0.1, y: -0.076, z: -0.0076 })
+      .onUpdate(() => camera.rotation.set(rot.x, rot.y, rot.z))
+      .start();
+    new TWEEN.Tween(tar)
+      .to({ x: -0.6, y: 33, z: -32 })
+      .onUpdate(() => controls.target.set(rot.x, rot.y, rot.z))
+      .start()
+      .onComplete(function () {
+        setLoading(false);
+      });
+  };
+  return camera;
 };

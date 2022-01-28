@@ -4,11 +4,13 @@ import Navbar from './components/Navbar';
 import useGoogleAnalytics from './utils/useGoogleAnalytics';
 import { useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import Animation from './Animation';
+import { useState, useEffect } from 'react';
 
 function GARoutes() {
   useGoogleAnalytics();
-  const location = useLocation();
 
+  const location = useLocation();
   return (
     <>
       <Navbar />
@@ -29,10 +31,25 @@ function GARoutes() {
 }
 
 function App() {
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <Router>
-      <GARoutes />
-    </Router>
+    <>
+      {loading && <Animation setLoading={setLoading} />}
+      {!loading && (
+        <Router>
+          <GARoutes />
+        </Router>
+      )}
+    </>
   );
 }
 

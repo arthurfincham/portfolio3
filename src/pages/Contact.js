@@ -79,9 +79,6 @@ export default function Contact() {
           </form>
         </div>
       </div>
-      <div className="w-1/2">
-        <Animation />
-      </div>
     </div>
   );
 }
