@@ -55,6 +55,8 @@ function App() {
     },
   });
 
+  document.getElementById('root').style.backgroundColor = loading ? '#1C1F25' : '#FFF4C7';
+
   return (
     <>
       {loading && <Animation setLoading={setLoading} setPreLoading={setPreLoading} divStyle={divStyle()} textStyle={textStyle} />}
