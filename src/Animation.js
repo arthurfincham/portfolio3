@@ -22,7 +22,7 @@ export default class Animation extends Component {
 
     floor(scene);
     lampLight(scene);
-    tinker(scene);
+    tinker(scene, this.props.setPreLoading);
     screen(scene);
 
     const myCam = MyCamera(w, h, renderer, this.props.setLoading);
@@ -34,8 +34,9 @@ export default class Animation extends Component {
     };
     animate();
   }
+
   render() {
-    return <div width="700" height="700" ref={(ref) => (this.mount = ref)} />;
+    return <div style={this.props.divStyle} width="700" height="700" ref={(ref) => (this.mount = ref)} />;
   }
 }
 
@@ -77,7 +78,7 @@ const lampLight = (scene) => {
   scene.add(toplight4);
 };
 
-const tinker = (scene) => {
+const tinker = (scene, setPreLoading) => {
   const mtlLoader = new MTLLoader();
   const objLoader = new OBJLoader();
 
@@ -88,8 +89,8 @@ const tinker = (scene) => {
     objLoader.load(myModel, function (object) {
       object.rotateX(-1.58);
       object.position.set(0, 0, 0);
-
       scene.add(object);
+      setPreLoading(false);
     });
   });
 };
@@ -114,12 +115,13 @@ const MyCamera = (w, h, renderer, setLoading) => {
 
   const controls = new OrbitControls(camera, renderer.domElement);
 
-  const timer = setTimeout(() => {
-    moveCam();
-  }, 2000);
+  document.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      moveCam();
+    }
+  });
 
   const moveCam = () => {
-    console.log('click');
     const tar = { x: 0, y: 0, z: 0 };
     const coords = { x: -167, y: 171, z: 364 };
     const rot = { x: -0.44, y: -0.39, z: -0.17 };

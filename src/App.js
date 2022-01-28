@@ -5,7 +5,7 @@ import useGoogleAnalytics from './utils/useGoogleAnalytics';
 import { useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Animation from './Animation';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function GARoutes() {
   useGoogleAnalytics();
@@ -31,19 +31,23 @@ function GARoutes() {
 }
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [preLoading, setPreLoading] = useState(true);
 
-  useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const divStyle = () => {
+    if (preLoading) {
+      return {
+        opacity: 0,
+      };
+    } else {
+      return {
+        opacity: 1,
+      };
+    }
+  };
   return (
     <>
-      {loading && <Animation setLoading={setLoading} />}
+      {loading && <Animation setLoading={setLoading} setPreLoading={setPreLoading} divStyle={divStyle()} />}
       {!loading && (
         <Router>
           <GARoutes />
