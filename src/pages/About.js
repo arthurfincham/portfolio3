@@ -16,7 +16,7 @@ export default function About() {
             </p>
           </div>
         </div>
-        <div className="w-full space-x-3 sm:space-x-0 sm:space-y-8 sm:w-1/3 frc sm:flex-col">
+        <div className="w-full space-x-3 sm:space-x-0 sm:space-y-8 sm:w-1/2 frc sm:flex-col">
           <GitHub className={buttonClasses} />
           <LinkedIn className={buttonClasses} />
         </div>

@@ -4,11 +4,14 @@ import Navbar from './components/Navbar';
 import useGoogleAnalytics from './utils/useGoogleAnalytics';
 import { useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import Animation from './animation/Animation';
+import { useState } from 'react';
+import { useSpring } from 'react-spring';
 
 function GARoutes() {
   useGoogleAnalytics();
-  const location = useLocation();
 
+  const location = useLocation();
   return (
     <>
       <Navbar />
@@ -29,10 +32,40 @@ function GARoutes() {
 }
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [preLoading, setPreLoading] = useState(true);
+
+  const divStyle = () => {
+    if (preLoading) {
+      return {
+        opacity: 0,
+      };
+    } else {
+      return {
+        opacity: 1,
+      };
+    }
+  };
+
+  const textStyle = useSpring({
+    delay: 2000,
+    to: 0.45,
+    from: {
+      opacity: 0,
+    },
+  });
+
+  document.getElementById('root').style.backgroundColor = loading ? '#1C1F25' : '#FFF4C7';
+
   return (
-    <Router>
-      <GARoutes />
-    </Router>
+    <>
+      {loading && <Animation setLoading={setLoading} setPreLoading={setPreLoading} divStyle={divStyle()} textStyle={textStyle} />}
+      {!loading && (
+        <Router>
+          <GARoutes />
+        </Router>
+      )}
+    </>
   );
 }
 
