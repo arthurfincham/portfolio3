@@ -187,3 +187,10 @@ main::-webkit-scrollbar {
 .enterButton {
   transform: translate(-50%, -50%);
 }
+
+#Log {
+  position: fixed;
+  background-color: red;
+  left: 5em;
+  top: 1em;
+}

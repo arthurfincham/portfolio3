@@ -49,7 +49,7 @@ function App() {
 
   const textStyle = useSpring({
     delay: 2000,
-    to: 1,
+    to: 0.45,
     from: {
       opacity: 0,
     },

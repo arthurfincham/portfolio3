@@ -4,8 +4,8 @@ import * as TWEEN from '@tweenjs/tween.js';
 
 export default function Camera(w, h, renderer, setLoading) {
   const camera = new THREE.PerspectiveCamera(45, w / h, 1, 1000);
-  camera.position.set(-107, 50, 10);
-  // camera.position.set(-167, 171, 364);
+
+  camera.position.set(-167, 171, 364);
   const controls = new OrbitControls(camera, renderer.domElement);
 
   document.addEventListener('keypress', function (e) {
@@ -38,12 +38,12 @@ export default function Camera(w, h, renderer, setLoading) {
 
   const setCam = () => {
     new TWEEN.Tween(coords)
-      .to({ x: -167, y: 171, z: 364 })
+      .to({ x: -38, y: 156, z: 336 })
       .onUpdate(() => camera.position.set(coords.x, coords.y, coords.z))
-      .easing(TWEEN.Easing.Quadratic.In)
+      .easing(TWEEN.Easing.Quadratic.Out)
       .start();
     new TWEEN.Tween(rot)
-      .to({ x: -0.44, y: -0.39, z: -0.17 })
+      .to({ x: -0.434, y: -0.1, z: -0.04 })
       .onUpdate(() => camera.rotation.set(rot.x, rot.y, rot.z))
       .start();
     new TWEEN.Tween(tar)
@@ -57,17 +57,17 @@ export default function Camera(w, h, renderer, setLoading) {
 
   const moveMob = () => {
     new TWEEN.Tween(coords)
-      .to({ x: -33.164, y: 46, z: -10.9 })
+      .to({ x: -36.65, y: 51.37, z: -5.68 })
       .onUpdate(() => camera.position.set(coords.x, coords.y, coords.z))
       .start()
       .easing(TWEEN.Easing.Quadratic.Out);
 
     new TWEEN.Tween(rot)
-      .to({ x: -1.558, y: -0.00071, z: -0.00574 })
+      .to({ x: -1.44, y: -0.033, z: -0.244 })
       .onUpdate(() => camera.rotation.set(rot.x, rot.y, rot.z))
       .start();
     new TWEEN.Tween(tar)
-      .to({ x: -33.16, y: 0.454, z: -11.47 })
+      .to({ x: -35, y: 3.828, z: -11.91 })
       .onUpdate(() => controls.target.set(rot.x, rot.y, rot.z))
       .start()
       .onComplete(function () {
