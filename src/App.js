@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Animation from './Animation';
 import { useState } from 'react';
+import { useSpring, animated } from 'react-spring';
 
 function GARoutes() {
   useGoogleAnalytics();
@@ -45,9 +46,18 @@ function App() {
       };
     }
   };
+
+  const textStyle = useSpring({
+    delay: 2000,
+    to: 1,
+    from: {
+      opacity: 0,
+    },
+  });
+
   return (
     <>
-      {loading && <Animation setLoading={setLoading} setPreLoading={setPreLoading} divStyle={divStyle()} />}
+      {loading && <Animation setLoading={setLoading} setPreLoading={setPreLoading} divStyle={divStyle()} textStyle={textStyle} />}
       {!loading && (
         <Router>
           <GARoutes />

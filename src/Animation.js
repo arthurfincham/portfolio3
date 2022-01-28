@@ -6,6 +6,7 @@ import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
 import myModel from './model.obj';
 import * as TWEEN from '@tweenjs/tween.js';
 
+import { animated } from 'react-spring';
 export default class Animation extends Component {
   componentDidMount() {
     const scene = new THREE.Scene();
@@ -27,16 +28,35 @@ export default class Animation extends Component {
 
     const myCam = MyCamera(w, h, renderer, this.props.setLoading);
 
+    var period = 10;
+    var clock = new THREE.Clock();
+    var matrix = new THREE.Matrix4();
+
+    const spinCam = () => {
+      matrix.makeRotationY((clock.getDelta() * 2 * Math.PI) / period);
+      myCam.position.applyMatrix4(matrix);
+      myCam.lookAt(0, 0, 10);
+    };
+
     var animate = function () {
       requestAnimationFrame(animate);
       renderer.render(scene, myCam);
+      spinCam();
       TWEEN.update();
     };
+
     animate();
   }
 
   render() {
-    return <div style={this.props.divStyle} width="700" height="700" ref={(ref) => (this.mount = ref)} />;
+    return (
+      <div className="relative">
+        <div style={this.props.divStyle} width="700" height="700" ref={(ref) => (this.mount = ref)} />
+        <animated.div style={this.props.textStyle} className="absolute text-lg sm:text-xl md:text-2xl enterButton font-a2 bottom-12 left-[50%]">
+          Press any key to enter
+        </animated.div>
+      </div>
+    );
   }
 }
 
@@ -116,18 +136,19 @@ const MyCamera = (w, h, renderer, setLoading) => {
   const controls = new OrbitControls(camera, renderer.domElement);
 
   document.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-      moveCam();
-    }
+    setCam();
   });
 
   const moveCam = () => {
+    console.log('click');
     const tar = { x: 0, y: 0, z: 0 };
     const coords = { x: -167, y: 171, z: 364 };
     const rot = { x: -0.44, y: -0.39, z: -0.17 };
     new TWEEN.Tween(coords)
       .to({ x: -3.9, y: 53, z: -9.8 })
       .onUpdate(() => camera.position.set(coords.x, coords.y, coords.z))
+      .easing(TWEEN.Easing.Quadratic.Out)
+
       .start();
     new TWEEN.Tween(rot)
       .to({ x: -0.1, y: -0.076, z: -0.0076 })
@@ -139,6 +160,29 @@ const MyCamera = (w, h, renderer, setLoading) => {
       .start()
       .onComplete(function () {
         setLoading(false);
+      });
+  };
+
+  const setCam = () => {
+    console.log('click');
+    const tar = controls.target;
+    const coords = camera.position;
+    const rot = camera.rotation;
+    new TWEEN.Tween(coords)
+      .to({ x: -167, y: 171, z: 364 })
+      .onUpdate(() => camera.position.set(coords.x, coords.y, coords.z))
+      .easing(TWEEN.Easing.Quadratic.In)
+      .start();
+    new TWEEN.Tween(rot)
+      .to({ x: -0.44, y: -0.39, z: -0.17 })
+      .onUpdate(() => camera.rotation.set(rot.x, rot.y, rot.z))
+      .start();
+    new TWEEN.Tween(tar)
+      .to({ x: 0, y: 0, z: 0 })
+      .onUpdate(() => controls.target.set(rot.x, rot.y, rot.z))
+      .start()
+      .onComplete(function () {
+        moveCam();
       });
   };
   return camera;
