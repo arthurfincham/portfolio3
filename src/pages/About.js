@@ -1,6 +1,5 @@
 import GitHub from '../svgs/GitHub';
 import LinkedIn from '../svgs/LinkedIn';
-import Animation from '../Animation';
 
 export default function About() {
   const buttonClasses = 'w-[150px] h-[60px] shadow-lg bg-white hover:bg-amber-50 rounded-lg fcc';
@@ -18,9 +17,8 @@ export default function About() {
           </div>
         </div>
         <div className="w-full space-x-3 sm:space-x-0 sm:space-y-8 sm:w-1/2 frc sm:flex-col">
-          {/* <GitHub className={buttonClasses} /> */}
-          {/* <LinkedIn className={buttonClasses} /> */}
-          <Animation />
+          <GitHub className={buttonClasses} />
+          <LinkedIn className={buttonClasses} />
         </div>
       </div>
     </div>

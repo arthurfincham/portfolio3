@@ -20,23 +20,17 @@ export default class Animation extends Component {
     document.body.appendChild(renderer.domElement);
     this.mount.appendChild(renderer.domElement);
 
-    var light = new THREE.PointLight(0xffffff, 1, 300, 2);
-    light.position.set(0, 100, 20);
-    light.castShadow = true;
-    scene.add(light);
-
     floor(scene);
     lampLight(scene);
     tinker(scene);
+    screen(scene);
 
     const controls = new OrbitControls(camera, renderer.domElement);
-    const gridHelper = new THREE.GridHelper(200, 50);
 
     var period = 20;
     var clock = new THREE.Clock();
     var matrix = new THREE.Matrix4();
 
-    // camera.position.z = 5;
     var animate = function () {
       requestAnimationFrame(animate);
       matrix.makeRotationY((clock.getDelta() * 2 * Math.PI) / period);
@@ -47,14 +41,16 @@ export default class Animation extends Component {
     animate();
   }
   render() {
-    return <div ref={(ref) => (this.mount = ref)} />;
+    return <div width="700" height="700" ref={(ref) => (this.mount = ref)} />;
   }
 }
 
 const floor = (scene) => {
   const renderFloor = (width, depth, height, step, x, y) => {
     const geometry = new THREE.BoxGeometry(width, depth, height);
-    const material = new THREE.MeshLambertMaterial({ color: 0xffdea8 });
+    const texture = new THREE.TextureLoader().load('rug.jpeg');
+    const material = new THREE.MeshLambertMaterial({ map: texture });
+
     const cylinder = new THREE.Mesh(geometry, material);
     cylinder.position.set(x, height / 2 + step, y);
     cylinder.rotation.x = Math.PI / 2;
@@ -62,18 +58,29 @@ const floor = (scene) => {
     scene.add(cylinder);
   };
 
-  renderFloor(100, 100, 0.5, 0, 0, -5);
+  renderFloor(120, 120, 0.5, 0, 0, 0);
 };
 
 const lampLight = (scene) => {
-  var light = new THREE.PointLight(0xffffff);
-  light.position.set(25, 30, -13);
-  light.castShadow = true;
-  scene.add(light);
+  var lamp = new THREE.PointLight(0xffffff, 2, 50, 1);
+  lamp.position.set(-40, 63, -20);
+  lamp.rotateY(180);
+  scene.add(lamp);
 
-  var toplight = new THREE.PointLight(0xffffff, 4, 20, 1);
-  toplight.position.set(23, 45, -15);
+  var toplight = new THREE.PointLight(0xffffff, 1, 400, 2.5);
+  toplight.position.set(0, 200, 0);
   scene.add(toplight);
+
+  var toplight2 = new THREE.PointLight(0xffffff, 1, 400, 2.5);
+  toplight2.position.set(0, 200, 50);
+  scene.add(toplight2);
+
+  var toplight3 = new THREE.PointLight(0xffffff, 1, 400, 2.5);
+  toplight3.position.set(0, 200, -50);
+  scene.add(toplight3);
+
+  var toplight4 = new THREE.AmbientLight(0xffffff, 0.4);
+  scene.add(toplight4);
 };
 
 const tinker = (scene) => {
@@ -85,11 +92,24 @@ const tinker = (scene) => {
 
     objLoader.setMaterials(materials);
     objLoader.load(myModel, function (object) {
-      object.scale.set(0.15, 0.15, 0.15);
       object.rotateX(-1.58);
       object.position.set(0, 0, 0);
 
       scene.add(object);
     });
   });
+};
+
+const screen = (scene) => {
+  const renderScreen = (width, depth, height, step, x, y) => {
+    const geometry = new THREE.BoxGeometry(width, depth, height);
+    const texture = new THREE.TextureLoader().load('code.png');
+    const material = new THREE.MeshLambertMaterial({ map: texture });
+
+    const cylinder = new THREE.Mesh(geometry, material);
+    cylinder.position.set(x, step, y);
+    scene.add(cylinder);
+  };
+
+  renderScreen(37.5, 19.5, 0.2, 51.4, -0.2, -26.05);
 };
