@@ -57,8 +57,6 @@ function App() {
     },
   });
 
-  document.getElementById('root').style.backgroundColor = loading ? '#1C1F25' : '#FFF4C7';
-
   return (
     <>
       {loading && (
@@ -66,7 +64,7 @@ function App() {
           <animated.button
             style={textStyle}
             id="mobileEnterButton"
-            className="fixed z-20 py-3 px-4 rounded-lg bottom-20 left-[50%] enterButton border border-white text-2xl tracking-wide font-a2 text-white"
+            className="fixed z-20 py-3 px-4 rounded-lg bottom-20 left-[50%] enterButton border border-gray-900 text-2xl tracking-wide font-a2 text-gray-900 sm:hidden"
           >
             enter
           </animated.button>

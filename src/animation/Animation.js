@@ -18,7 +18,7 @@ export default class Animation extends Component {
     const renderer = new THREE.WebGLRenderer({ antialias: true, autoSize: true });
 
     renderer.setSize(w, h);
-    renderer.setClearColor(0x1c1f25, 1);
+    renderer.setClearColor(0xfff4c7, 0);
 
     document.body.appendChild(renderer.domElement);
     this.mount.appendChild(renderer.domElement);
@@ -56,7 +56,7 @@ export default class Animation extends Component {
         <div style={this.props.divStyle} width="700" height="700" ref={(ref) => (this.mount = ref)} />
         <animated.div
           style={this.props.textStyle}
-          className="absolute text-lg sm:text-xl md:text-2xl enterButton font-a2 bottom-12 left-[50%] text-gray-100 hidden sm:block"
+          className="absolute text-lg sm:text-xl md:text-2xl enterButton font-a2 bottom-12 left-[50%] text-gray-900 hidden sm:block"
         >
           Press any key to enter
         </animated.div>
