@@ -18,7 +18,8 @@ export default class Animation extends Component {
     const renderer = new THREE.WebGLRenderer({ antialias: true, autoSize: true, alphasize: true });
 
     renderer.setPixelRatio(window.devicePixelRatio);
-
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFShadowMap;
     renderer.setSize(w, h);
     renderer.setClearColor(0xfff4c7, 0);
 
@@ -27,10 +28,10 @@ export default class Animation extends Component {
 
     Carpet(scene);
     Lighting(scene);
-    Model(scene, this.props.setPreLoading);
+    Model(scene, this.props.setLoading);
     Screens(scene);
 
-    const myCam = Camera(w, h, renderer, this.props.setLoading);
+    const myCam = Camera(w, h, renderer, this.props.setEntered);
 
     var period = 10;
     var clock = new THREE.Clock();
@@ -55,7 +56,7 @@ export default class Animation extends Component {
   render() {
     return (
       <div className="relative">
-        <div style={this.props.divStyle} width="700" height="700" ref={(ref) => (this.mount = ref)} />
+        <div width="700" height="700" ref={(ref) => (this.mount = ref)} />
         <animated.div
           style={this.props.textStyle}
           className="absolute text-lg sm:text-xl md:text-2xl enterButton font-a2 bottom-12 left-[50%] text-gray-900 hidden sm:block"
