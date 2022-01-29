@@ -15,7 +15,9 @@ export default class Animation extends Component {
     const w = window.innerWidth;
     const h = window.innerHeight;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, autoSize: true });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, autoSize: true, alphasize: true });
+
+    renderer.setPixelRatio(window.devicePixelRatio);
 
     renderer.setSize(w, h);
     renderer.setClearColor(0xfff4c7, 0);
