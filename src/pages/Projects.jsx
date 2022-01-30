@@ -12,7 +12,6 @@ export default function Projects() {
 
   const addImage = (image) => {
     imagesLoaded.push(image);
-    console.log(imagesLoaded.length);
     if (imagesLoaded.length > 7) {
       setLoading(false);
     }

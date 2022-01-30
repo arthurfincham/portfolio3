@@ -11,7 +11,7 @@ export default function ResponsiveImage({ image, addImage }) {
       className="w-full rounded-b-lg shadow-lg projectImage"
       alt={image}
       key={image}
-      onLoad={(e) => addImage(image)}
+      onLoad={() => addImage(image)}
       height="100%"
       width="100%"
     />

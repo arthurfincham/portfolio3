@@ -1,3 +1,4 @@
+import React from "react";
 export default function GitHub({ className }) {
   return (
     <a href="https://github.com/arthurfincham" target="blank" data-testid="arthurGitHubLink">

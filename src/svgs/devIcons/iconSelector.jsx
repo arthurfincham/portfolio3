@@ -1,3 +1,4 @@
+import React from "react";
 import AwsLogo from './AwsLogo';
 import BootstrapLogo from './BootstrapLogo';
 import HerokuLogo from './HerokuLogo';

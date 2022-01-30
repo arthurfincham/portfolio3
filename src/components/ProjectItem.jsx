@@ -69,7 +69,7 @@ export default function ProjectItem({ project, className, style, addImage }) {
     strokeWidth: '25px',
   };
 
-  const Link = ({ url, text, label, testID }) => {
+  const Link = ({ url, text,  testID }) => {
     return (
       <div className="h-auto p-1 px-2 rounded-t-lg shadow-lg bg-amber-50 hover:bg-amber-100 dark:bg-slate-700">
         <a href={url} target="_blank" className="text-sm dark:text-white font-mono3" data-testid={testID} rel="noreferrer">
@@ -83,8 +83,8 @@ export default function ProjectItem({ project, className, style, addImage }) {
     <div style={style} className="overflow-hidden rounded-lg shadowTop fcc">
       <div className="relative items-end justify-between w-full px-4 pt-2 overflow-hidden rounded-t-lg shadowTop bg-amber-100 fr dark:bg-slate-700/40">
         <div className="space-x-2 fr ">
-          <Link url={project.repoURL} text="GitHub" label={project.title} testID={`${project.title}-GitHubLink`} />
-          {project.liveLink ? <Link url={project.liveLink} text="Site" label={project.title} testID={`${project.title}-LiveSiteLink`} /> : ''}
+          <Link url={project.repoURL} text="GitHub"  testID={`${project.title}-GitHubLink`} />
+          {project.liveLink ? <Link url={project.liveLink} text="Site"  testID={`${project.title}-LiveSiteLink`} /> : ''}
         </div>
         <div className="items-center space-x-1 fr">
           {isPinned ? <PinIcon styles={pinStyle} className="w-[15px] h-[15px] mb-1 " /> : ''}

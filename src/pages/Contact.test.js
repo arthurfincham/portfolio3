@@ -1,3 +1,4 @@
+import React from 'react';
 import Contact from './Contact';
 import { render, screen } from '@testing-library/react';
 

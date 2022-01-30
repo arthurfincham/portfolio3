@@ -8,16 +8,16 @@ export default function Camera(w, h, renderer, setLoading) {
   camera.position.set(-167, 171, 364);
   const controls = new OrbitControls(camera, renderer.domElement);
 
-  document.addEventListener('keypress', function (e) {
+  document.addEventListener('keypress', function () {
     window.innerWidth < 640 ? setMob() : setCam();
   });
 
   const touchButton = document.getElementById('mobileEnterButton');
-  touchButton.addEventListener('click', function (e) {
+  touchButton.addEventListener('click', function () {
     window.innerWidth < 640 ? setMob() : setCam();
   });
 
-  touchButton.addEventListener('touchend', function (e) {
+  touchButton.addEventListener('touchend', function () {
     window.innerWidth < 640 ? setMob() : setCam();
   });
 

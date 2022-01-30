@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as Pages from './pages/pagesExporter';
 import { animated } from 'react-spring';
@@ -89,10 +90,10 @@ function App() {
         </>
       )}
       {!entered && (
-        <Router>
-          <GARoutes />
-        </Router>
-      )}
+      <Router>
+        <GARoutes />
+      </Router>
+      )} 
     </>
   );
 }

@@ -2,7 +2,7 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
 import myModel from './deskModel.obj';
 import myMaterial from './deskMaterial.mtl';
-import * as THREE from 'three';
+
 export default function Model(scene, setLoading) {
   const mtlLoader = new MTLLoader();
   const objLoader = new OBJLoader();
