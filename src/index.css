@@ -145,7 +145,7 @@ main {
   background: rgb(255, 244, 199);
   background: linear-gradient(
     180deg,
-    rgba(255, 244, 199, 1) 64%,
+    rgba(255, 244, 199, 1) 40%,
     rgba(255, 255, 255, 0) 100%
   );
 }

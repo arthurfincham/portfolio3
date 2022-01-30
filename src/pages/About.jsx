@@ -3,7 +3,7 @@ import GitHub from '../svgs/GitHub';
 import LinkedIn from '../svgs/LinkedIn';
 
 export default function About() {
-  const buttonClasses = 'w-[150px] h-[60px] shadow-lg bg-white hover:bg-amber-50 rounded-lg fcc';
+  const buttonClasses = 'w-[150px] h-[60px] shadow-lg bg-white hover:bg-amber-50 rounded-lg fcc ';
   return (
     <div className="w-full h-4/5 sm:h-3/5 dark:text-white ">
       <div className="px-8 space-y-12 sm:space-y-0 fcc sm:flex-row xl:mr-24 min-h-[80vh]">
