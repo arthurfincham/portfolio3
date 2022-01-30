@@ -32,9 +32,9 @@ function GARoutes() {
 
 function App() {
   return (
-      <Router>
-        <GARoutes />
-      </Router>
+    <Router>
+      <GARoutes />
+    </Router>
   );
 }
 

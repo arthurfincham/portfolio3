@@ -30,11 +30,11 @@ export default function Contact() {
     e.target.reset();
   };
 
-  const inputClasses = 'w-full px-3 py-2  bg-white rounded-md shadow-md focus:outline-0 dark:text-black ';
+  const inputClasses = 'w-full px-3 py-2  bg-white rounded-md shadow-md focus:outline-0 dark:text-black';
 
   return (
     <div className="flex w-full">
-      <div className="container  sm:py-12 mx-auto max-w-[600px] dark:text-white w-1/2">
+      <div className="container sm:py-12 mx-auto max-w-[600px] dark:text-white w-1/2">
         <div className="w-full mb-2 text-center fcc">
           <p className="py-6 text-2xl font-bold leading-relaxed tracking-wide font-mono3 lg:w-2/3">GET IN TOUCH</p>
         </div>
