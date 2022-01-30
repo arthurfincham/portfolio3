@@ -1,6 +1,6 @@
 import GitHub from '../svgs/GitHub';
 import LinkedIn from '../svgs/LinkedIn';
-
+import React from 'react';
 export default function About() {
   const buttonClasses = 'w-[150px] h-[60px] shadow-lg bg-white hover:bg-amber-50 rounded-lg fcc';
   return (

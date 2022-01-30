@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-
+import React from 'react';
 export default function NavLinks({ className, handleClick }) {
   return (
     <div className={className} onClick={handleClick}>

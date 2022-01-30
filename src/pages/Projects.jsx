@@ -1,6 +1,6 @@
 import { gustApp, chitter, classNotes, acebook, newsforce, fontApp, countries, licence } from '../data/projectData';
 import ProjectItem from '../components/ProjectItem';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { TailSpin } from 'react-loader-spinner';
 
 export default function Projects() {

@@ -2,7 +2,7 @@ import { iconSelector } from '../svgs/devIcons/iconSelector';
 import { useSpring, animated } from 'react-spring';
 import { ResizeObserver } from '@juggle/resize-observer';
 import useMeasure from 'react-use-measure';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import PinIcon from '../svgs/PinIcon';
 import ResponsiveImage from './ResponsiveImage';
 
@@ -72,7 +72,7 @@ export default function ProjectItem({ project, className, style, addImage }) {
   const Link = ({ url, text, label, testID }) => {
     return (
       <div className="h-auto p-1 px-2 rounded-t-lg shadow-lg bg-amber-50 hover:bg-amber-100 dark:bg-slate-700">
-        <a href={url} target="_blank" className="text-sm dark:text-white font-mono3" data-testid={testID}>
+        <a href={url} target="_blank" className="text-sm dark:text-white font-mono3" data-testid={testID} rel="noreferrer">
           {text}
         </a>
       </div>

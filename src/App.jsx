@@ -1,13 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as Pages from './pages/pagesExporter';
 import { animated } from 'react-spring';
-
 import Navbar from './components/Navbar';
 import useGoogleAnalytics from './utils/useGoogleAnalytics';
 import { useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Animation from './animation/Animation';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useSpring } from 'react-spring';
 import { TailSpin } from 'react-loader-spinner';
 

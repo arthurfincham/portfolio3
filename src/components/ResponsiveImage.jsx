@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function ResponsiveImage({ image, addImage }) {
   const small = `/images/${image}Small.webp`;
   const medium = `/images/${image}Medium.webp`;

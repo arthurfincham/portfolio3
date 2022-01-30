@@ -1,6 +1,6 @@
 import NavLinks from './NavLinks';
 import { useSpring, animated } from 'react-spring';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import PlusIcon from '../svgs/PlusIcon';
 import { useLocation } from 'react-router-dom';
 
