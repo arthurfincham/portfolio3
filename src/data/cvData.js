@@ -27,9 +27,9 @@ export const makers = {
   dates: '2021',
   points: [
     '16 week highly selective development bootcamp, based around self-led learning, weekend challenges and group engineering projects.',
-    'We began with TDD in Ruby and Rspec before moving to OOD, databases and web development. ',
+    'We began with TDD in Ruby and Rspec before moving to OOD, databases and web development in Javascript. ',
     'Experience of pair programming and collaborating with other devs was invaluable.',
-    'Our cohort was hybrid, meaning that our second of three projects was done remotely. Using Agile methodologies through tools like Trello and GitHub, we made good progress and got a taste of working in the real world.',
+    "Our cohort was hybrid, meaning that our second of three projects was done remotely. Project process was typically to domain-model and wireframe the site, write up sized tickets on Trello and review each other's code each morning.",
     'Participated in the Emotional Intelligence curriculum, which improved my skills in feedback, empathy and teamwork.',
     'By the end of the course, I was confident and competent in building a full-stack application.',
   ],

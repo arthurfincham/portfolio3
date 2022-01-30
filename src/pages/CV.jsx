@@ -1,5 +1,5 @@
 import { makers, kcl, rga } from '../data/cvData';
-import PDF from '../data/ArthurFincham_CV_2022.pdf';
+import PDF from '../data/Arthur_Fincham_CV.pdf';
 import PDFIcon from '../svgs/PDFIcon';
 import React from 'react';
 export default function CV() {

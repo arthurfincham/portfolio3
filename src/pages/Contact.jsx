@@ -66,7 +66,7 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
-                  className="w-full h-48 px-3 py-1 bg-white rounded rounded-lg shadow-lg outline-none resize-none font-a4 focus:border-0 dark:text-black"
+                  className="w-full h-48 px-3 py-1 bg-white rounded-lg shadow-lg outline-none resize-none font-a4 focus:border-0 dark:text-black"
                 ></textarea>
               </div>
             </div>
