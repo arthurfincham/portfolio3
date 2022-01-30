@@ -59,7 +59,7 @@ export default class Animation extends Component {
         <div width="700" height="700" ref={(ref) => (this.mount = ref)} />
         <animated.div
           style={this.props.textStyle}
-          className="absolute text-lg sm:text-xl md:text-2xl enterButton font-a2 bottom-12 left-[50%] text-gray-900 hidden sm:block"
+          className="absolute text-lg sm:text-xl md:text-2xl enterButton font-a2 bottom-12 left-[50%] text-gray-900 dark:text-gray-200 hidden sm:block"
         >
           Press any key to enter
         </animated.div>

@@ -10,8 +10,9 @@ export default function Carpet(scene) {
     carpet.position.set(x, height / 2 + step, y);
     carpet.rotation.x = Math.PI / 2;
     carpet.rotation.z = Math.PI / 2;
+    carpet.receiveShadow = true;
     scene.add(carpet);
   };
 
-  render(120, 120, 0.5, 0, 0, 0);
+  render(150, 150, 0.5, 0, 0, 0);
 }

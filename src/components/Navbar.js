@@ -51,7 +51,7 @@ export default function Navbar() {
 
   return (
     <nav className="sm:overflow-hidden w-full bg-amber-100 dark:bg-slate-900 relative h-[50px] fr justify-center shadow-md dark:shadow-lg xxl:px-24 dark:text-white">
-      <div className="z-40 items-center justify-between w-full px-2 shadow-md sm:shadow-none sm:justify-end fr xxl:mr-2 mainNavWrapper">
+      <div className="z-40 items-center justify-between w-full px-2 shadow-md sm:shadow-none sm:justify-end fr xxl:mr-2 mainNavWrapper dark:bg-slate-900">
         <NavLinks className="relative items-center hidden w-auto mx-4 mt-2 space-x-6 sm:flex" />
         <animated.span style={mobTitleStyles} className="mt-1 ml-3 text-xl sm:hidden font-a1 mobActive">
           {mobNavTitle(location.pathname)}
@@ -62,9 +62,12 @@ export default function Navbar() {
           </animated.div>
         </div>
       </div>
-      <animated.div style={navSpring} className=" navContentMob mobileNavBar absolute top-[50px] w-full  z-10 flex sm:hidden fc justify-start p-4 ">
-        <div className="w-full h-[80vh]   ">
-          <NavLinks handleClick={handleClick} className="items-start space-y-6 navLinksClassName fc " />
+      <animated.div
+        style={navSpring}
+        className=" navContentMob mobileNavBar absolute top-[50px] w-full  z-10 dark:bg-slate-900 flex sm:hidden fc justify-start p-4 "
+      >
+        <div className="w-full h-[80vh]  dark:bg-slate-900 ">
+          <NavLinks handleClick={handleClick} className="items-start space-y-6 dark:bg-slate-900 navLinksClassName fc " />
         </div>
       </animated.div>
     </nav>

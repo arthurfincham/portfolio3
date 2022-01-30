@@ -18,7 +18,7 @@ function GARoutes() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="dark:bg-slate-900">
         <TransitionGroup component={null}>
           <CSSTransition key={location.key} classNames="fade" timeout={300}>
             <Routes location={location}>
@@ -37,10 +37,9 @@ function GARoutes() {
 function App() {
   const [loading, setLoading] = useState(true);
   const [entered, setEntered] = useState(true);
-  const [spinning, setSpinning] = useState(true);
 
   const divStyle = () => {
-    if (loading || spinning) {
+    if (loading) {
       return {
         opacity: 0,
       };
@@ -51,16 +50,8 @@ function App() {
     }
   };
 
-  const spin = () => {
-    setTimeout(function () {
-      setSpinning(false);
-    }, 1500);
-  };
-
-  spin();
-
   const spinStyle = () => {
-    if (loading || spinning) {
+    if (loading) {
       return {
         display: 'flex',
       };

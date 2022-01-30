@@ -1,9 +1,26 @@
 import * as THREE from 'three';
 
 export default function Screens(scene) {
+  const picPicker = () => {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'deskFrameDark.svg';
+    } else {
+      return 'deskFrame.svg';
+    }
+  };
+
+  const picPicker2 = () => {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'mobPicDark.svg';
+    } else {
+      return 'mobPic.svg';
+    }
+  };
+
   const renderScreen = (depth, height, step, x, y) => {
     const geometry = new THREE.BoxGeometry(depth * 1.96, depth, height);
-    const texture = new THREE.TextureLoader().load('deskFrame.svg');
+
+    const texture = new THREE.TextureLoader().load(picPicker());
     const material = new THREE.MeshBasicMaterial({ map: texture });
 
     const cylinder = new THREE.Mesh(geometry, material);
@@ -15,7 +32,7 @@ export default function Screens(scene) {
 
   const renderPhone = (width, depth, step, x, y) => {
     const geometry = new THREE.BoxGeometry(width, depth, width * 2);
-    const texture = new THREE.TextureLoader().load('mobPic.svg');
+    const texture = new THREE.TextureLoader().load(picPicker2());
     const material = new THREE.MeshBasicMaterial({ map: texture });
 
     const cylinder = new THREE.Mesh(geometry, material);
