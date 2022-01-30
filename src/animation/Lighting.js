@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+
 export default function Lighting(scene) {
   var lamp = new THREE.PointLight(0xffffff, 1, 50, 1);
   lamp.position.set(-40, 63, -20);

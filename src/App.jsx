@@ -1,9 +1,7 @@
 import React from 'react';
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-
 import Navbar from './components/Navbar';
 import * as Pages from './pages/pagesExporter';
 import useGoogleAnalytics from './utils/useGoogleAnalytics';

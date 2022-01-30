@@ -1,7 +1,8 @@
 import React from 'react';
 
-import Projects from './Projects';
 import { render, screen } from '@testing-library/react';
+import Projects from './Projects';
+
 describe('PROJECTS', () => {
   describe('link buttons have correct href', () => {
     test('Gust', () => {

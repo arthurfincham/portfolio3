@@ -1,6 +1,6 @@
 import React from 'react';
-import Contact from './Contact';
 import { render, screen } from '@testing-library/react';
+import Contact from './Contact';
 
 describe('CONTACT', () => {
   describe('contact form', () => {

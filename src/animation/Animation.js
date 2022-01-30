@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import * as THREE from 'three';
 import * as TWEEN from '@tweenjs/tween.js';
 import { animated } from 'react-spring';
+import * as THREE from 'three';
 
+import Camera from './Camera';
 import Carpet from './Carpet';
 import Lighting from './Lighting';
 import Model from './Model';
 import Screens from './Screens';
-import Camera from './Camera';
 
 export default class Animation extends Component {
   componentDidMount() {

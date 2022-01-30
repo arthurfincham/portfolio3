@@ -1,4 +1,5 @@
 import React from "react";
+
 export default function LinkedIn({ className }) {
   return (
     <a href="https://www.linkedin.com/in/arthurfincham/" target="blank" data-testid="arthurLinkedInLink">

@@ -1,7 +1,8 @@
-import { makers, kcl, rga } from '../data/cvData';
-import PDF from '../data/Arthur_Fincham_CV.pdf';
-import PDFIcon from '../svgs/PDFIcon';
 import React from 'react';
+import PDF from '../data/Arthur_Fincham_CV.pdf';
+import { makers, kcl, rga } from '../data/cvData';
+import PDFIcon from '../svgs/PDFIcon';
+
 export default function CV() {
   const Item = ({ props }) => {
     return (

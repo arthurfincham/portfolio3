@@ -1,7 +1,8 @@
 import React from 'react';
 
-import CV from './CV';
 import { render, screen } from '@testing-library/react';
+import CV from './CV';
+
 describe('CV', () => {
   describe('link button has correct href', () => {
     test('PDF link', () => {

@@ -1,7 +1,7 @@
-import { gustApp, chitter, classNotes, acebook, newsforce, fontApp, countries, licence } from '../data/projectData';
-import ProjectItem from '../components/ProjectItem';
 import React, { useState } from 'react';
 import { TailSpin } from 'react-loader-spinner';
+import ProjectItem from '../components/ProjectItem';
+import { gustApp, chitter, classNotes, acebook, newsforce, fontApp, countries, licence } from '../data/projectData';
 
 export default function Projects() {
   const projects = [gustApp, chitter, classNotes, acebook, newsforce, fontApp, countries, licence];

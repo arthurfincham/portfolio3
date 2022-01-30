@@ -1,8 +1,8 @@
-import NavLinks from './NavLinks';
-import { useSpring, animated } from 'react-spring';
 import React, { useState } from 'react';
-import PlusIcon from '../svgs/PlusIcon';
 import { useLocation } from 'react-router-dom';
+import { useSpring, animated } from 'react-spring';
+import PlusIcon from '../svgs/PlusIcon';
+import NavLinks from './NavLinks';
 
 export default function Navbar() {
   const [isClosed, setIsClosed] = useState(true);

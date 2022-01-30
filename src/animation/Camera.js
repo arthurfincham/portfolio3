@@ -1,6 +1,6 @@
+import * as TWEEN from '@tweenjs/tween.js';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import * as TWEEN from '@tweenjs/tween.js';
 
 export default function Camera(w, h, renderer, setLoading) {
   const camera = new THREE.PerspectiveCamera(45, w / h, 1, 1000);
