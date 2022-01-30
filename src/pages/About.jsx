@@ -8,7 +8,7 @@ export default function About() {
     <div className="w-full h-4/5 sm:h-3/5 dark:text-white ">
       <div className="px-8 space-y-12 sm:space-y-0 fcc sm:flex-row xl:mr-24 min-h-[80vh]">
         <div className="w-full sm:w-2/3">
-          <div className="max-w-[90ch] fc text-left sm:text-center sm:items-end">
+          <div className="max-w-[90ch] fc text-left sm:text-right  sm:items-end">
             <h1 className="text-6xl sm:text-8xl md:text-9xl">arthur fincham</h1>
             <p className="max-w-[34ch] text-2xl md:text-3xl font-a3">
               i am a <span className="text-indigo-600 dark:text-[#4F47E5] ">full-stack developer</span> with an eye for design. Makers Academy grad.
