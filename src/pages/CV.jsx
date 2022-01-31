@@ -48,6 +48,7 @@ export default function CV() {
               data-testid="cvPDFLink"
               className="w-[60px] h-[60px] absolute right-3 sm:right-0 bg-gray-100 rounded-lg border-[.12em] border-black hover:bg-gray-200 fcc"
             >
+              <p className="sr-only">PDF CV</p>
               <PDFIcon className="z-10 w-full h-full " />
             </a>
           </div>

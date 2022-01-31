@@ -3,7 +3,9 @@ import React from "react";
 export default function LinkedIn({ className }) {
   return (
     <a href="https://www.linkedin.com/in/arthurfincham/" target="blank" data-testid="arthurLinkedInLink">
+      <p className="sr-only">LinkedIn Link</p>
       <button className={className}>
+        <p className="sr-only">LinkedIn Button</p>
         <svg
           width="100%"
           height="100%"
