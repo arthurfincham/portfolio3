@@ -38,7 +38,6 @@ export default function Contact() {
       <Helmet>
         <title>Get in touch! | Arthur Fincham Software Developer</title>
         <meta name="description" content="If you'd like to get in touch feel free to use my contact form." />
-        <meta name="keywords" content="developer, programmer, coding, full-stack, react, arthur, fincham, Arthur Fincham, London, react, React, Rails"/>
       </Helmet>
       <div className="container sm:py-12 mx-auto max-w-[600px] dark:text-white w-3/4">
         <div className="w-full mb-2 text-center fcc">

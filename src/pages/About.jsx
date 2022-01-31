@@ -10,7 +10,6 @@ export default function About() {
       <Helmet>
         <title>About | Arthur Fincham Software Developer</title>
         <meta name="description" content="I am a full-stack developer with an eye for design. Makers Academy grad with experience building projects in Ruby on Rails and React." />
-        <meta name="keywords" content="developer, programmer, coding, full-stack, react, arthur, fincham, Arthur Fincham, London"/>
       </Helmet>
       <div className="w-full h-4/5 sm:h-3/5 dark:text-white ">
         <div className="px-8 space-y-12 sm:space-y-0 fcc sm:flex-row xl:mr-24 min-h-[80vh]">

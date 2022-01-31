@@ -26,7 +26,6 @@ export default function Projects() {
       <Helmet>
         <title>Projects | Arthur Fincham Software Developer</title>
         <meta name="description" content="A collection of my favorite developement projects including work with React, Express, Ruby on Rails and Sinatra." />
-        <meta name="keywords" content="developer, programmer, coding, full-stack, react, arthur, fincham, Arthur Fincham, London, react, React, Rails"/>
       </Helmet>
       <div className="flex-wrap w-full bg-amber-100 dark:bg-slate-900 fcc lg:flex-row">
         {loading && (
