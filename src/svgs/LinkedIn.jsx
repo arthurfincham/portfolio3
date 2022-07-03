@@ -1,15 +1,18 @@
-import React from "react";
+import React from 'react';
 
 export default function LinkedIn({ className }) {
   return (
-    <a href="https://www.linkedin.com/in/arthurfincham/" target="blank" data-testid="arthurLinkedInLink">
+    <a
+      href="https://www.linkedin.com/in/arthurfincham/"
+      target="blank"
+      data-testid="arthurLinkedInLink"
+    >
       <p className="sr-only">LinkedIn Link</p>
       <button className={className}>
         <p className="sr-only">LinkedIn Button</p>
         <svg
           width="100%"
           height="100%"
-          className=""
           xmlns="http://www.w3.org/2000/svg"
           viewBox="-40.125525 -16.3118 347.75455 97.8708"
           alt="linkedinIcon"

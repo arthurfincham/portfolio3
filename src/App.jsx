@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import GARoutes from './GARoutes'
+
+import Page from './Page';
 
 function App() {
   return (
     <Router>
-      <GARoutes />
+      <Page />
     </Router>
   );
 }

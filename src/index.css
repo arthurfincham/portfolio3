@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './css/customClasses.css';
-@import './fonts/AktivGrotesk/AktivGrotesk.css';
-@import './fonts/IBMPlexMono/IBMPlexMono.css';
-@import './css/pageTransitions.css';
+@import './fonts/Biotif/Biotif.css';
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -17,7 +14,10 @@ body,
 #root,
 main,
 .App {
-  @apply bg-amber-100 dark:bg-slate-900;
+  @apply bg-white dark:bg-zinc-900;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 main {
@@ -197,4 +197,25 @@ main::-webkit-scrollbar {
   background-color: red;
   left: 5em;
   top: 1em;
+}
+
+#zzishLink {
+  position: relative;
+  display: inline-block;
+}
+#zzishLink:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0.2vw;
+  content: '';
+  display: block;
+  height: 0.5vw;
+  left: 50%;
+  position: absolute;
+  background: #c125d3;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+#zzishLink:hover:after {
+  width: 100%;
+  left: 0;
 }

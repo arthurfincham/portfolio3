@@ -30,6 +30,7 @@
     "react-router-sitemap": "^1.2.0",
     "react-scripts": "^5.0.0",
     "react-spring": "^9.4.2",
+    "react-textfit": "^1.1.1",
     "react-transition-group": "^4.4.2",
     "react-use-measure": "^2.1.1",
     "sweetalert2": "^11.3.6",

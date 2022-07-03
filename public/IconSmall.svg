@@ -2,13 +2,13 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #fff4c7;
+        fill: #fff;
       }
 
       .cls-2 {
         font-size: 39.38px;
-        fill: #4239e5;
-        font-family: AktivGrotesk-Black, Aktiv Grotesk;
+         fill: #000;
+        font-family: Biotif-Black;
         font-weight: 800;
       }
 
