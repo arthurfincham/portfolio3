@@ -1,18 +1,23 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { NavLink } from 'react-router-dom';
 import { Textfit } from 'react-textfit';
-import CVButton from './buttons/CVButton';
-import GitHubButton from './buttons/GitHubButton';
-import LinkedInButton from './buttons/LinkedInButton';
-import ButtonWrapper from './components/ButtonWrapper';
+import CVButton from '../buttons/CVButton';
+import GitHubButton from '../buttons/GitHubButton';
+import LinkedInButton from '../buttons/LinkedInButton';
+import ButtonWrapper from '../components/ButtonWrapper';
 
-export default function Page() {
+export default function NewAbout() {
   const buttonClass = 'w-[100px] h-[100px] dark:fill-gray-50';
   const textStyles = {
     width: '100%',
     marginTop: '5px',
   };
   const titleStyle = {
+    width: '100%',
+    lineHeight: '.7em',
+  };
+  const projectsStyle = {
     width: '100%',
     lineHeight: '.7em',
   };
@@ -84,6 +89,24 @@ export default function Page() {
           <ButtonWrapper label="cv">
             <CVButton buttonClass={buttonClass} />
           </ButtonWrapper>
+        </div>
+        <div className="flex flex-col items-center	mt-12 justify-center w-[70%] max-w-[400px] leading-none text-gray-800 dark:text-gray-100">
+          <Textfit
+            className="font-a3"
+            style={projectsStyle}
+            mode="single"
+            forceSingleModeWidth={true}
+            max={200}
+          >
+            find some of my older projects{' '}
+            <NavLink
+              className="font-a2 text-orange-400"
+              id="oldProjectsLink"
+              to="/projects"
+            >
+              here
+            </NavLink>
+          </Textfit>
         </div>
       </div>
     </>
