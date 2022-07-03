@@ -8,7 +8,9 @@ import LinkedInButton from '../buttons/LinkedInButton';
 import ButtonWrapper from '../components/ButtonWrapper';
 
 export default function NewAbout() {
-  const buttonClass = 'w-[100px] h-[100px] dark:fill-gray-50';
+  //
+  const buttonClass =
+    ' h-[60px] w-[60px] sm:h-[70px] sm:w-[70px] md:h-[80px] md:w-[80px] lg:h-[90px] lg:w-[90px] xl:h-[100px] xl:w-[100px] dark:fill-gray-50';
   const textStyles = {
     width: '100%',
     marginTop: '5px',
@@ -79,7 +81,7 @@ export default function NewAbout() {
             to help accelerate learning in the classroom
           </Textfit>
         </div>
-        <div className="flex w-[50%] justify-evenly">
+        <div className="flex w-[90%] sm:w-[75%] md:w-[62%] lg:w-[50%] justify-evenly">
           <ButtonWrapper label="github">
             <GitHubButton buttonClass={buttonClass} />
           </ButtonWrapper>

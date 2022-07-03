@@ -1,11 +1,31 @@
 import React, { useState } from 'react';
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import { TailSpin } from 'react-loader-spinner';
+import { NavLink } from 'react-router-dom';
+
 import ProjectItem from '../components/ProjectItem';
-import { gustApp, chitter, classNotes, acebook, newsforce, fontApp, countries, licence } from '../data/projectData';
+import {
+  gustApp,
+  chitter,
+  classNotes,
+  acebook,
+  newsforce,
+  fontApp,
+  countries,
+  licence,
+} from '../data/projectData';
 
 export default function Projects() {
-  const projects = [gustApp, chitter, classNotes, acebook, newsforce, fontApp, countries, licence];
+  const projects = [
+    gustApp,
+    chitter,
+    classNotes,
+    acebook,
+    newsforce,
+    fontApp,
+    countries,
+    licence,
+  ];
 
   const [loading, setLoading] = useState(true);
 
@@ -24,26 +44,40 @@ export default function Projects() {
   return (
     <>
       <Helmet>
-        <title>Projects | Arthur Fincham Software Developer</title>
-        <meta name="description" content="A collection of my favorite developement projects including work with React, Express, Ruby on Rails and Sinatra." />
+        <title>projects | arthur fincham frontend developer</title>
+        <meta name="description" content="some of my older projects" />
       </Helmet>
-      <div className="flex-wrap w-full bg-amber-100 dark:bg-slate-900 fcc lg:flex-row">
-        {loading && (
-          <div className="w-full fcc">
-            <TailSpin color="#4F47E6" height={80} width={80} />
-          </div>
-        )}
-        {projects.map((project, index) => {
-          return (
-            <div key={index} className="w-5/6 m-6 lg:w-5/12 fcc">
-              <div className="space-x-2 fr">
-                <div className="space-y-2 fc">
-                  <ProjectItem style={loadingStyle} className="relative w-full cursor-pointer " project={project} addImage={addImage} />
+      <div className="flex flex-col items-center">
+        <NavLink
+          className="font-a2 text-xl mt-4 text-orange-500"
+          id="projectsBackButton"
+          to="/"
+        >
+          back
+        </NavLink>
+        <div className="flex-wrap w-full bg-white dark:bg-gray-900 fcc lg:flex-row">
+          {loading && (
+            <div className="w-full fcc">
+              <TailSpin color="#4F47E6" height={80} width={80} />
+            </div>
+          )}
+          {projects.map((project, index) => {
+            return (
+              <div key={index} className="w-5/6 m-6 lg:w-5/12 fcc">
+                <div className="space-x-2 fr">
+                  <div className="space-y-2 fc">
+                    <ProjectItem
+                      style={loadingStyle}
+                      className="relative w-full cursor-pointer "
+                      project={project}
+                      addImage={addImage}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </>
   );

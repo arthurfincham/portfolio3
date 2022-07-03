@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @import './fonts/Biotif/Biotif.css';
+@import './css/customClasses.css';
+@import './css/pageTransitions.css';
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -17,7 +19,6 @@ main,
   @apply bg-white dark:bg-zinc-900;
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 main {
@@ -237,6 +238,27 @@ main::-webkit-scrollbar {
   width: 0;
 }
 #oldProjectsLink:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+#projectsBackButton {
+  position: relative;
+  display: inline-block;
+}
+#projectsBackButton:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: -10%;
+  content: '';
+  display: block;
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  background: #fb923c;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+#projectsBackButton:hover:after {
   width: 100%;
   left: 0;
 }
